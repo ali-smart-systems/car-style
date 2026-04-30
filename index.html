@@ -5,36 +5,91 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>كار استايل | محمد الرباحي</title>
     <style>
-        :root { --main-color: #e91e63; --bg-color: #0f0f0f; }
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: var(--bg-color); color: white; margin: 0; padding: 20px; display: flex; flex-direction: column; align-items: center; min-height: 100vh; }
+        /* ألوان عصرية تناسب عالم السيارات */
+        :root { --main-color: #e91e63; --bg-color: #0b0b0b; --card-bg: #1a1a1a; }
+        
+        body { 
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; 
+            background-color: var(--bg-color); 
+            color: white; 
+            margin: 0; 
+            padding: 20px; 
+            display: flex; 
+            flex-direction: column; 
+            align-items: center; 
+            min-height: 100vh; 
+        }
+
         .container { width: 100%; max-width: 400px; text-align: center; }
-        .profile-header { margin-top: 20px; margin-bottom: 30px; }
-        .logo { width: 100px; height: 100px; border-radius: 50%; border: 3px solid var(--main-color); box-shadow: 0 0 15px var(--main-color); object-fit: cover; }
-        h1 { font-size: 22px; margin: 15px 0 5px 0; color: white; }
-        .location-text { color: #aaa; font-size: 14px; margin-bottom: 25px; }
-        .btn { display: flex; align-items: center; justify-content: center; background: #1e1e1e; color: white; text-decoration: none; padding: 16px; margin: 12px 0; border-radius: 15px; font-weight: bold; border: 1px solid #333; transition: all 0.3s ease; font-size: 16px; }
-        .btn:active { transform: scale(0.95); background: #252525; }
-        .btn-whatsapp { border-left: 5px solid #25d366; }
-        .btn-call { border-left: 5px solid #4285f4; }
-        .btn-map { border-left: 5px solid #ea4335; }
-        .footer { margin-top: auto; padding: 20px 0; font-size: 12px; color: #444; }
+        
+        .profile-header { margin-top: 30px; margin-bottom: 25px; }
+        
+        /* تنسيق الشعار ليكون مضيئاً */
+        .logo { 
+            width: 110px; height: 110px; 
+            border-radius: 50%; 
+            border: 3px solid var(--main-color); 
+            box-shadow: 0 0 20px rgba(233, 30, 99, 0.4); 
+            object-fit: cover;
+            background-color: #111;
+        }
+
+        h1 { font-size: 24px; margin: 15px 0 5px 0; font-weight: bold; }
+        .location-text { color: #888; font-size: 14px; margin-bottom: 30px; }
+
+        /* تنسيق الأزرار */
+        .btn { 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            background: var(--card-bg); 
+            color: white; 
+            text-decoration: none; 
+            padding: 18px; 
+            margin: 14px 0; 
+            border-radius: 16px; 
+            font-weight: 600; 
+            border: 1px solid #333; 
+            transition: all 0.2s ease-in-out; 
+            font-size: 17px; 
+        }
+
+        .btn:active { transform: scale(0.96); background: #222; }
+        
+        /* ألوان جانبية للأزرار لسهولة التمييز */
+        .btn-whatsapp { border-right: 6px solid #25d366; }
+        .btn-call { border-right: 6px solid #4285f4; }
+        .btn-map { border-right: 6px solid #ea4335; }
+
+        .footer { 
+            margin-top: auto; 
+            padding: 30px 0; 
+            font-size: 13px; 
+            color: #555; 
+            line-height: 1.6;
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="profile-header">
-            <img src="https://via.placeholder.com/150/e91e63/ffffff?text=Car+Style" class="logo" alt="Logo">
+            <img src="logo.png" onerror="this.src='https://via.placeholder.com/150/e91e63/ffffff?text=Car+Style'" class="logo" alt="Logo">
             <h1>كار استايل (محمد الرباحي)</h1>
             <div class="location-text">الرياض - حي العمل - شارع الغرابي</div>
         </div>
 
-        <a href="https://wa.me/966553368215?text=السلام عليكم، عندي استفسار بخصوص خدمات كار استايل" class="btn btn-whatsapp">💬 تواصل مباشرة عبر واتساب</a>
+        <a href="https://wa.me/966553368215?text=السلام عليكم، استفسار بخصوص خدمات كار استايل" class="btn btn-whatsapp">
+            <span>💬 تواصل مباشرة عبر واتساب</span>
+        </a>
 
-        
-        <a href="tel:966553368215" class="btn btn-call">📞 اتصل بنا للاستفسار</a>
-        
-        <a href="https://maps.app.goo.gl/wTrp4HLrwXq4uznr8" class="btn btn-map">📍 موقعنا في شارع الغرابي</a>
-        
+        <a href="tel:966553368215" class="btn btn-call">
+            <span>📞 اتصل بنا للاستفسار</span>
+        </a>
+
+        <a href="https://maps.app.goo.gl/wTrp4HLrwXq4uznr8" class="btn btn-map">
+            <span>📍 موقعنا في شارع الغرابي</span>
+        </a>
+
         <div class="footer">
             تصميم وبرمجة: علي صالح <br>
             خبير أنظمة ذكية
