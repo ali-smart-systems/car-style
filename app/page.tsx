@@ -3,22 +3,38 @@
 import Link from 'next/link';
 
 export default function Home() {
-  // استخدام الرابط العميق (Deep Link) الذي يستدعي التطبيق من النظام مباشرة
-  const whatsappLink = "whatsapp://send?phone=966553368215";
   const tiktokLink = "https://www.tiktok.com/@user1853168014566?_r=1&_t=ZS-95yMEdWkJAj";
-  const phoneLink = "tel:+966553368215";
-  const googleMapsLink = "https://maps.google.com/?q=24.7136,46.6753"; // رابط مباشر للخرائط
+  const googleMapsLink = "https://www.google.com/maps/search/?api=1&query=24.7136,46.6753"; // رابط مباشر للخرائط
+
+  // 🚀 الدالة الذكية لاختراق متصفح تيك توك وفتح الواتساب إجبارياً
+  const handleWhatsAppClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    const userAgent = navigator.userAgent || navigator.vendor || (window as any).opera;
+
+    if (/android/i.test(userAgent)) {
+      // كود الأندرويد الإجباري (Intent)
+      window.location.href = "intent://send?phone=966553368215#Intent;scheme=whatsapp;package=com.whatsapp;end";
+    } else {
+      // كود الآيفون والكمبيوتر
+      window.open("https://wa.me/966553368215", "_blank");
+    }
+  };
+
+  // دالة الاتصال المباشر
+  const handlePhoneClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    window.location.href = "tel:+966553368215";
+  };
 
   return (
     <main className="min-h-screen bg-gray-900 text-gray-50 font-sans relative overflow-hidden text-right" dir="rtl">
 
       {/* 1. الأيقونات العائمة */}
       <div className="fixed bottom-6 right-6 flex flex-col gap-4 z-50">
-        {/* استخدمنا <a> العادي بدون target="_blank" للواتساب لكي لا يمنعه التيك توك */}
-        <a href={whatsappLink} className="bg-green-500 hover:bg-green-400 text-white p-4 rounded-full shadow-lg hover:scale-110 transition duration-300">
+        <button onClick={handleWhatsAppClick} className="bg-green-500 hover:bg-green-400 text-white p-4 rounded-full shadow-lg hover:scale-110 transition duration-300 cursor-pointer outline-none">
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
-        </a>
-        <a href={tiktokLink} target="_blank" rel="noopener noreferrer" className="bg-black border border-gray-700 hover:bg-gray-800 text-white p-4 rounded-full shadow-lg hover:scale-110 transition duration-300">
+        </button>
+        <a href={tiktokLink} target="_blank" rel="noopener noreferrer" className="bg-black border border-gray-700 hover:bg-gray-800 text-white p-4 rounded-full shadow-lg hover:scale-110 transition duration-300 cursor-pointer">
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"></path></svg>
         </a>
       </div>
@@ -33,9 +49,9 @@ export default function Home() {
           <h1 className="text-7xl md:text-[10rem] font-black mb-4 text-white drop-shadow-2xl italic tracking-tighter leading-none text-center uppercase">CAR STYLE</h1>
           <p className="text-xl md:text-3xl mb-12 text-blue-400 font-bold tracking-[0.3em] uppercase text-center">إبداع بلا حدود في عالم زينة السيارات</p>
           <div className="flex flex-wrap justify-center gap-6">
-            <a href={whatsappLink} className="bg-blue-600 hover:bg-blue-500 text-white px-12 py-4 rounded-full font-bold text-lg shadow-xl hover:-translate-y-1 transition-all w-full sm:w-auto text-center">حجز موعد</a>
-            <a href={tiktokLink} target="_blank" rel="noopener noreferrer" className="bg-white/10 backdrop-blur-md border border-white/20 text-white px-12 py-4 rounded-full font-bold text-lg hover:bg-white/20 transition-all w-full sm:w-auto text-center">أعمالنا</a>
-            <a href={phoneLink} className="bg-gray-100 hover:bg-white text-gray-900 px-12 py-4 rounded-full font-bold text-lg shadow-xl hover:-translate-y-1 transition-all w-full sm:w-auto text-center">اتصل بنا</a>
+            <button onClick={handleWhatsAppClick} className="bg-blue-600 hover:bg-blue-500 text-white px-12 py-4 rounded-full font-bold text-lg shadow-xl hover:-translate-y-1 transition-all w-full sm:w-auto text-center cursor-pointer">حجز موعد</button>
+            <a href={tiktokLink} target="_blank" rel="noopener noreferrer" className="bg-white/10 backdrop-blur-md border border-white/20 text-white px-12 py-4 rounded-full font-bold text-lg hover:bg-white/20 transition-all w-full sm:w-auto text-center cursor-pointer">أعمالنا</a>
+            <button onClick={handlePhoneClick} className="bg-gray-100 hover:bg-white text-gray-900 px-12 py-4 rounded-full font-bold text-lg shadow-xl hover:-translate-y-1 transition-all w-full sm:w-auto text-center cursor-pointer">اتصل بنا</button>
           </div>
         </div>
       </section>
@@ -62,7 +78,29 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 4. قسم الموقع وساعات العمل */}
+      {/* 4. قسم معرض الفيديوهات */}
+      <section className="py-24 bg-black/40 relative z-10 overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4">
+          <h2 className="text-4xl font-bold mb-12 text-right text-blue-500 italic">إبداعاتنا بالفيديو</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="relative h-[500px] bg-gray-800 rounded-3xl overflow-hidden border border-gray-700 group">
+              <video
+                src="/videos/v1.webm"
+                className="w-full h-full object-cover opacity-60 group-hover:opacity-100 transition-opacity"
+                autoPlay
+                muted
+                loop
+                playsInline
+              />
+              <div className="absolute bottom-6 right-6 text-right">
+                <p className="text-white font-bold text-lg shadow-black drop-shadow-md">لمسة إبداع</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 5. قسم الموقع وساعات العمل */}
       <footer className="relative py-24 px-4 overflow-hidden text-center z-10 border-t border-gray-800">
         <div className="absolute inset-0 z-0">
           <img src="/images/5.webp" alt="Our Location" className="w-full h-full object-cover opacity-30" />
