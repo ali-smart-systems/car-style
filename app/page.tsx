@@ -11,7 +11,7 @@ export default function Home() {
         <Link href="https://wa.me/966553368215" target="_blank" className="bg-green-500 hover:bg-green-400 text-white p-4 rounded-full shadow-lg hover:scale-110 transition duration-300">
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
         </Link>
-        <Link href="https://www.tiktok.com/@user1853168014566" target="_blank" className="bg-black border border-gray-700 hover:bg-gray-800 text-white p-4 rounded-full shadow-lg hover:scale-110 transition duration-300">
+        <Link href="https://www.tiktok.com/@user1853168014566?_r=1&_t=ZS-95yMEdWkJAj" target="_blank" className="bg-black border border-gray-700 hover:bg-gray-800 text-white p-4 rounded-full shadow-lg hover:scale-110 transition duration-300">
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"></path></svg>
         </Link>
       </div>
@@ -27,7 +27,7 @@ export default function Home() {
           <p className="text-xl md:text-3xl mb-12 text-blue-400 font-bold tracking-[0.3em] uppercase">إبداع بلا حدود في عالم زينة السيارات</p>
           <div className="flex flex-wrap justify-center gap-6">
             <Link href="https://wa.me/966553368215" className="bg-blue-600 hover:bg-blue-500 text-white px-12 py-4 rounded-full font-bold text-lg shadow-xl hover:-translate-y-1 transition-all w-full sm:w-auto">حجز موعد</Link>
-            <Link href="https://www.tiktok.com/@user1853168014566" target="_blank" className="bg-white/10 backdrop-blur-md border border-white/20 text-white px-12 py-4 rounded-full font-bold text-lg hover:bg-white/20 transition-all w-full sm:w-auto">أعمالنا</Link>
+            <Link href="https://www.tiktok.com/@user1853168014566?_r=1&_t=ZS-95yMEdWkJAj" target="_blank" className="bg-white/10 backdrop-blur-md border border-white/20 text-white px-12 py-4 rounded-full font-bold text-lg hover:bg-white/20 transition-all w-full sm:w-auto">أعمالنا</Link>
             <Link href="tel:+966553368215" className="bg-gray-100 hover:bg-white text-gray-900 px-12 py-4 rounded-full font-bold text-lg shadow-xl hover:-translate-y-1 transition-all w-full sm:w-auto">اتصل بنا</Link>
           </div>
         </div>
