@@ -12,10 +12,33 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-// هنا قمنا بتعديل عنوان الموقع ووصفه ليظهر بشكل احترافي في جوجل
+// إعدادات الـ Metadata المتقدمة لتصدر نتائج البحث
 export const metadata: Metadata = {
-  title: "كارستايل - Car Style",
-  description: "كارستايل لزينة السيارات، التلميع الساطع، والعازل الحراري",
+  title: {
+    default: "كار ستايل | زينة وتلميع سيارات بالرياض - محمد الرباحي",
+    template: "%s | كار ستايل"
+  },
+  description: "مركز كار ستايل (محمد الرباحي) في الرياض. متخصصون في التلميع الساطع، العازل الحراري، النانو سيراميك، وتجهيز السيارات بأحدث الإكسسوارات والشاشات.",
+  keywords: [
+    "زينة سيارات الرياض", 
+    "تلميع سيارات ساطع", 
+    "عازل حراري نانو سيراميك", 
+    "محمد الرباحي", 
+    "كار ستايل", 
+    "تجهيز سيارات", 
+    "محل زينة سيارات الرياض",
+    "تلميع داخلي وخارجي"
+  ],
+  authors: [{ name: "Ali Saleh" }],
+  viewport: "width=device-width, initial-scale=1",
+  robots: "index, follow",
+  // تحسين ظهور الرابط عند مشاركته في الواتساب أو تيك توك
+  openGraph: {
+    title: "كار ستايل لزينة وتلميع السيارات",
+    description: "أفضل خدمات العناية بالسيارات في الرياض",
+    type: "website",
+    locale: "ar_SA",
+  }
 };
 
 export default function RootLayout({
@@ -24,13 +47,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    // هنا قمنا بتغيير اللغة إلى العربية وتحديد الاتجاه من اليمين لليسار
     <html
       lang="ar"
       dir="rtl"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col bg-gray-900">
+        {children}
+      </body>
     </html>
   );
 }
