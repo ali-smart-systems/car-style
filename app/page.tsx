@@ -8,13 +8,15 @@ export default function Home() {
   const phoneLink = "tel:+966553368215";
   const googleMapsLink = "https://www.google.com/maps/search/?api=1&query=24.7136,46.6753";
 
-  // 🚀 حالة لاكتشاف المتصفح الداخلي لتيك توك والإنستغرام
+  // حالة لاكتشاف المتصفح الداخلي
   const [isInAppBrowser, setIsInAppBrowser] = useState(false);
 
   useEffect(() => {
+    // رادار أقوى لاكتشاف كل المتصفحات الداخلية حتى لو تخفت
     const ua = navigator.userAgent || navigator.vendor || (window as any).opera;
-    // إذا كان اسم المتصفح يحتوي على تيك توك أو إنستغرام أو فيسبوك
-    if (ua.indexOf("TikTok") > -1 || ua.indexOf("Instagram") > -1 || ua.indexOf("FB") > -1) {
+    const isApp = /(TikTok|Bytedance|Instagram|FBAN|FBAV|Snapchat|Twitter)/i.test(ua);
+
+    if (isApp) {
       setIsInAppBrowser(true);
     }
   }, []);
@@ -22,11 +24,11 @@ export default function Home() {
   return (
     <main className="min-h-screen bg-gray-900 text-gray-50 font-sans relative overflow-hidden text-right" dir="rtl">
 
-      {/* 🛑 الشريط الذكي الذي يظهر فقط في متصفحات التطبيقات */}
+      {/* 🛑 الشريط الذكي - سيظهر الآن بقوة إذا كان داخل تيك توك */}
       {isInAppBrowser && (
-        <div className="bg-red-600/90 backdrop-blur-sm text-white text-center py-3 px-4 text-sm md:text-base font-bold sticky top-0 z-[100] shadow-lg border-b border-red-500 flex flex-col items-center justify-center animate-pulse">
-          <span>⚠️ تنبيه هام</span>
-          <span className="font-normal text-xs md:text-sm mt-1">لتعمل أزرار الواتساب والاتصال، اضغط على (الثلاث نقاط ⠇) بالأعلى واختر "فتح في المتصفح" أو "Open in browser"</span>
+        <div className="bg-red-600/95 backdrop-blur-md text-white text-center py-3 px-4 text-sm md:text-base font-bold sticky top-0 z-[100] shadow-2xl border-b-2 border-red-400 flex flex-col items-center justify-center animate-pulse">
+          <span className="text-lg">⚠️ تنبيه هام لعملائنا</span>
+          <span className="font-normal text-xs md:text-sm mt-1">لتعمل أزرار (الواتساب والاتصال)، يرجى الضغط على <strong className="bg-white/20 px-1 rounded">الثلاث نقاط ⠇</strong> بالأعلى واختيار <strong className="bg-white/20 px-1 rounded">فتح في المتصفح</strong></span>
         </div>
       )}
 
