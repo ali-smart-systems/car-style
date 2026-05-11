@@ -1,14 +1,34 @@
 "use client";
 
+import { useState, useEffect } from 'react';
+
 export default function Home() {
-  // استخدام روابط الويب النقية (HTTPS) التي لا يستطيع تيك توك حظرها
   const whatsappLink = "https://api.whatsapp.com/send?phone=966553368215";
   const tiktokLink = "https://www.tiktok.com/@user1853168014566?_r=1&_t=ZS-95yMEdWkJAj";
   const phoneLink = "tel:+966553368215";
   const googleMapsLink = "https://www.google.com/maps/search/?api=1&query=24.7136,46.6753";
 
+  // 🚀 حالة لاكتشاف المتصفح الداخلي لتيك توك والإنستغرام
+  const [isInAppBrowser, setIsInAppBrowser] = useState(false);
+
+  useEffect(() => {
+    const ua = navigator.userAgent || navigator.vendor || (window as any).opera;
+    // إذا كان اسم المتصفح يحتوي على تيك توك أو إنستغرام أو فيسبوك
+    if (ua.indexOf("TikTok") > -1 || ua.indexOf("Instagram") > -1 || ua.indexOf("FB") > -1) {
+      setIsInAppBrowser(true);
+    }
+  }, []);
+
   return (
     <main className="min-h-screen bg-gray-900 text-gray-50 font-sans relative overflow-hidden text-right" dir="rtl">
+
+      {/* 🛑 الشريط الذكي الذي يظهر فقط في متصفحات التطبيقات */}
+      {isInAppBrowser && (
+        <div className="bg-red-600/90 backdrop-blur-sm text-white text-center py-3 px-4 text-sm md:text-base font-bold sticky top-0 z-[100] shadow-lg border-b border-red-500 flex flex-col items-center justify-center animate-pulse">
+          <span>⚠️ تنبيه هام</span>
+          <span className="font-normal text-xs md:text-sm mt-1">لتعمل أزرار الواتساب والاتصال، اضغط على (الثلاث نقاط ⠇) بالأعلى واختر "فتح في المتصفح" أو "Open in browser"</span>
+        </div>
+      )}
 
       {/* 1. الأيقونات العائمة */}
       <div className="fixed bottom-6 right-6 flex flex-col gap-4 z-50">
