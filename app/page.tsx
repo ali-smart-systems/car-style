@@ -1,40 +1,21 @@
 "use client";
 
-import Link from 'next/link';
-
 export default function Home() {
+  // استخدام روابط الويب النقية (HTTPS) التي لا يستطيع تيك توك حظرها
+  const whatsappLink = "https://api.whatsapp.com/send?phone=966553368215";
   const tiktokLink = "https://www.tiktok.com/@user1853168014566?_r=1&_t=ZS-95yMEdWkJAj";
-  const googleMapsLink = "https://www.google.com/maps/search/?api=1&query=24.7136,46.6753"; // رابط مباشر للخرائط
-
-  // 🚀 الدالة الذكية لاختراق متصفح تيك توك وفتح الواتساب إجبارياً
-  const handleWhatsAppClick = (e: React.MouseEvent) => {
-    e.preventDefault();
-    const userAgent = navigator.userAgent || navigator.vendor || (window as any).opera;
-
-    if (/android/i.test(userAgent)) {
-      // كود الأندرويد الإجباري (Intent)
-      window.location.href = "intent://send?phone=966553368215#Intent;scheme=whatsapp;package=com.whatsapp;end";
-    } else {
-      // كود الآيفون والكمبيوتر
-      window.open("https://wa.me/966553368215", "_blank");
-    }
-  };
-
-  // دالة الاتصال المباشر
-  const handlePhoneClick = (e: React.MouseEvent) => {
-    e.preventDefault();
-    window.location.href = "tel:+966553368215";
-  };
+  const phoneLink = "tel:+966553368215";
+  const googleMapsLink = "https://www.google.com/maps/search/?api=1&query=24.7136,46.6753";
 
   return (
     <main className="min-h-screen bg-gray-900 text-gray-50 font-sans relative overflow-hidden text-right" dir="rtl">
 
       {/* 1. الأيقونات العائمة */}
       <div className="fixed bottom-6 right-6 flex flex-col gap-4 z-50">
-        <button onClick={handleWhatsAppClick} className="bg-green-500 hover:bg-green-400 text-white p-4 rounded-full shadow-lg hover:scale-110 transition duration-300 cursor-pointer outline-none">
+        <a href={whatsappLink} target="_blank" rel="noopener noreferrer" className="bg-green-500 hover:bg-green-400 text-white p-4 rounded-full shadow-lg hover:scale-110 transition duration-300">
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
-        </button>
-        <a href={tiktokLink} target="_blank" rel="noopener noreferrer" className="bg-black border border-gray-700 hover:bg-gray-800 text-white p-4 rounded-full shadow-lg hover:scale-110 transition duration-300 cursor-pointer">
+        </a>
+        <a href={tiktokLink} target="_blank" rel="noopener noreferrer" className="bg-black border border-gray-700 hover:bg-gray-800 text-white p-4 rounded-full shadow-lg hover:scale-110 transition duration-300">
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"></path></svg>
         </a>
       </div>
@@ -49,9 +30,9 @@ export default function Home() {
           <h1 className="text-7xl md:text-[10rem] font-black mb-4 text-white drop-shadow-2xl italic tracking-tighter leading-none text-center uppercase">CAR STYLE</h1>
           <p className="text-xl md:text-3xl mb-12 text-blue-400 font-bold tracking-[0.3em] uppercase text-center">إبداع بلا حدود في عالم زينة السيارات</p>
           <div className="flex flex-wrap justify-center gap-6">
-            <button onClick={handleWhatsAppClick} className="bg-blue-600 hover:bg-blue-500 text-white px-12 py-4 rounded-full font-bold text-lg shadow-xl hover:-translate-y-1 transition-all w-full sm:w-auto text-center cursor-pointer">حجز موعد</button>
-            <a href={tiktokLink} target="_blank" rel="noopener noreferrer" className="bg-white/10 backdrop-blur-md border border-white/20 text-white px-12 py-4 rounded-full font-bold text-lg hover:bg-white/20 transition-all w-full sm:w-auto text-center cursor-pointer">أعمالنا</a>
-            <button onClick={handlePhoneClick} className="bg-gray-100 hover:bg-white text-gray-900 px-12 py-4 rounded-full font-bold text-lg shadow-xl hover:-translate-y-1 transition-all w-full sm:w-auto text-center cursor-pointer">اتصل بنا</button>
+            <a href={whatsappLink} target="_blank" rel="noopener noreferrer" className="bg-blue-600 hover:bg-blue-500 text-white px-12 py-4 rounded-full font-bold text-lg shadow-xl hover:-translate-y-1 transition-all w-full sm:w-auto text-center">حجز موعد</a>
+            <a href={tiktokLink} target="_blank" rel="noopener noreferrer" className="bg-white/10 backdrop-blur-md border border-white/20 text-white px-12 py-4 rounded-full font-bold text-lg hover:bg-white/20 transition-all w-full sm:w-auto text-center">أعمالنا</a>
+            <a href={phoneLink} className="bg-gray-100 hover:bg-white text-gray-900 px-12 py-4 rounded-full font-bold text-lg shadow-xl hover:-translate-y-1 transition-all w-full sm:w-auto text-center">اتصل بنا</a>
           </div>
         </div>
       </section>
