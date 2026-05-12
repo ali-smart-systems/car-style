@@ -12,7 +12,7 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-// إعدادات الـ Metadata المحدثة باسم "كارستايل"
+// إعدادات الـ Metadata المحدثة باسم "كارستايل" مع إضافة كود إثبات ملكية جوجل
 export const metadata: Metadata = {
   title: {
     default: "كارستايل | زينة وتلميع سيارات بالرياض - محمد الرباحي",
@@ -37,7 +37,10 @@ export const metadata: Metadata = {
     description: "أفضل خدمات العناية بالسيارات في الرياض - مركز كارستايل",
     type: "website",
     locale: "ar_SA",
-  }
+  },
+  verification: {
+    google: "yGsEhpBU4tOj2oVtJ4Qnz2ynWA2d_982wdf3rsaG7Kc",
+  },
 };
 
 export default function RootLayout({
