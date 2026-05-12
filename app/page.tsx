@@ -6,13 +6,13 @@ export default function Home() {
   const whatsappLink = "https://api.whatsapp.com/send?phone=966553368215";
   const tiktokLink = "https://www.tiktok.com/@user1853168014566?_r=1&_t=ZS-95yMEdWkJAj";
   const phoneLink = "tel:+966553368215";
-  const googleMapsLink = "https://www.google.com/maps/search/?api=1&query=24.7136,46.6753";
+  // ✅ تم تحديث الرابط إلى العنوان الدقيق لكارستايل
+  const googleMapsLink = "https://maps.app.goo.gl/bzXpThGWnaCMqWmf8";
 
   // حالة لاكتشاف المتصفح الداخلي
   const [isInAppBrowser, setIsInAppBrowser] = useState(false);
 
   useEffect(() => {
-    // رادار أقوى لاكتشاف كل المتصفحات الداخلية حتى لو تخفت
     const ua = navigator.userAgent || navigator.vendor || (window as any).opera;
     const isApp = /(TikTok|Bytedance|Instagram|FBAN|FBAV|Snapchat|Twitter)/i.test(ua);
 
@@ -24,7 +24,7 @@ export default function Home() {
   return (
     <main className="min-h-screen bg-gray-900 text-gray-50 font-sans relative overflow-hidden text-right" dir="rtl">
 
-      {/* 🛑 الشريط الذكي - سيظهر الآن بقوة إذا كان داخل تيك توك */}
+      {/* 🛑 الشريط الذكي */}
       {isInAppBrowser && (
         <div className="bg-red-600/95 backdrop-blur-md text-white text-center py-3 px-4 text-sm md:text-base font-bold sticky top-0 z-[100] shadow-2xl border-b-2 border-red-400 flex flex-col items-center justify-center animate-pulse">
           <span className="text-lg">⚠️ تنبيه هام لعملائنا</span>
