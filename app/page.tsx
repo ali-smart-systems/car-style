@@ -34,7 +34,7 @@ export default function Home() {
 
       {/* 1. الأيقونات العائمة (تمت إضافة الخرائط والاتصال) */}
       <div className="fixed bottom-6 right-6 flex flex-col gap-4 z-50">
-        
+
         {/* زر الخرائط */}
         <a href={googleMapsLink} target="_blank" rel="noopener noreferrer" className="bg-red-500 hover:bg-red-400 text-white p-4 rounded-full shadow-lg hover:scale-110 transition duration-300 flex items-center justify-center" title="موقعنا على الخريطة">
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
@@ -54,18 +54,26 @@ export default function Home() {
         <a href={tiktokLink} target="_blank" rel="noopener noreferrer" className="bg-black border border-gray-700 hover:bg-gray-800 text-white p-4 rounded-full shadow-lg hover:scale-110 transition duration-300 flex items-center justify-center" title="تيك توك">
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"></path></svg>
         </a>
-        
+
       </div>
 
-      {/* 2. قسم الواجهة (Hero) */}
+      {/* 2. قسم الواجهة (Hero) - تم التحديث بخلفية احترافية خافتة ونص مضيء */}
       <section className="relative flex flex-col items-center justify-center text-center min-h-[95vh] px-4">
         <div className="absolute inset-0 z-0">
-          <img src="/images/1.webp" alt="Car Style" className="w-full h-full object-cover opacity-60" />
-          <div className="absolute inset-0 bg-gradient-to-b from-gray-900/10 via-gray-900/60 to-gray-900"></div>
+          {/* الصورة الخلفية: تأكد أن صورة اللوحة مسمّاة 1.webp وموجودة في المجلد */}
+          <img src="/images/1.webp" alt="Car Style Shop" className="w-full h-full object-cover" />
+          {/* طبقة التعتيم (Overlay) لإبراز النصوص وجعل الخلفية سينمائية */}
+          <div className="absolute inset-0 bg-black/70 backdrop-blur-[2px]"></div>
         </div>
         <div className="relative z-10 max-w-5xl mt-10">
-          <h1 className="text-7xl md:text-[10rem] font-black mb-4 text-white drop-shadow-2xl italic tracking-tighter leading-none text-center uppercase">CAR STYLE</h1>
-          <p className="text-xl md:text-3xl mb-12 text-blue-400 font-bold tracking-[0.3em] uppercase text-center">إبداع بلا حدود في عالم زينة السيارات</p>
+          {/* اسم المحل مع تدرج لوني أزرق لامع يوحي بالاحترافية */}
+          <h1 className="text-7xl md:text-[10rem] font-black mb-4 text-transparent bg-clip-text bg-gradient-to-t from-blue-500 to-white drop-shadow-[0_0_15px_rgba(59,130,246,0.5)] italic tracking-tighter leading-none text-center uppercase">
+            CAR STYLE
+          </h1>
+          {/* وصف المحل مع خلفية شفافة صغيرة تزيد من وضوح القراءة */}
+          <p className="text-xl md:text-3xl mb-12 text-gray-200 font-bold tracking-[0.3em] uppercase text-center bg-black/30 py-2 px-6 rounded-full inline-block backdrop-blur-sm">
+            إبداع بلا حدود في عالم زينة السيارات
+          </p>
           <div className="flex flex-wrap justify-center gap-6">
             <a href={whatsappLink} target="_blank" rel="noopener noreferrer" className="bg-blue-600 hover:bg-blue-500 text-white px-12 py-4 rounded-full font-bold text-lg shadow-xl hover:-translate-y-1 transition-all w-full sm:w-auto text-center">حجز موعد</a>
             <a href={tiktokLink} target="_blank" rel="noopener noreferrer" className="bg-white/10 backdrop-blur-md border border-white/20 text-white px-12 py-4 rounded-full font-bold text-lg hover:bg-white/20 transition-all w-full sm:w-auto text-center">أعمالنا</a>
