@@ -57,20 +57,16 @@ export default function Home() {
 
       </div>
 
-      {/* 2. قسم الواجهة (Hero) - تم التحديث بخلفية احترافية خافتة ونص مضيء */}
+      {/* 2. قسم الواجهة (Hero) */}
       <section className="relative flex flex-col items-center justify-center text-center min-h-[95vh] px-4">
         <div className="absolute inset-0 z-0">
-          {/* الصورة الخلفية: تأكد أن صورة اللوحة مسمّاة 1.webp وموجودة في المجلد */}
           <img src="/images/1.webp" alt="Car Style Shop" className="w-full h-full object-cover" />
-          {/* طبقة التعتيم (Overlay) لإبراز النصوص وجعل الخلفية سينمائية */}
           <div className="absolute inset-0 bg-black/70 backdrop-blur-[2px]"></div>
         </div>
         <div className="relative z-10 max-w-5xl mt-10">
-          {/* اسم المحل مع تدرج لوني أزرق لامع يوحي بالاحترافية */}
           <h1 className="text-7xl md:text-[10rem] font-black mb-4 text-transparent bg-clip-text bg-gradient-to-t from-blue-500 to-white drop-shadow-[0_0_15px_rgba(59,130,246,0.5)] italic tracking-tighter leading-none text-center uppercase">
             CAR STYLE
           </h1>
-          {/* وصف المحل مع خلفية شفافة صغيرة تزيد من وضوح القراءة */}
           <p className="text-xl md:text-3xl mb-12 text-gray-200 font-bold tracking-[0.3em] uppercase text-center bg-black/30 py-2 px-6 rounded-full inline-block backdrop-blur-sm">
             إبداع بلا حدود في عالم زينة السيارات
           </p>
@@ -82,14 +78,31 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 3. قسم الخدمات */}
+      {/* 3. قسم الخدمات (تمت إضافة 20 صورة) */}
       <section className="py-24 px-4 max-w-7xl mx-auto relative z-10">
-        <h2 className="text-4xl font-bold mb-16 text-center text-white italic">خدماتنا المميزة</h2>
+        <h2 className="text-4xl font-bold mb-16 text-center text-white italic">أعمالنا وخدماتنا</h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
           {[
             { id: 2, title: "تلميع ساطع", desc: "نستخدم أجود المواد لتعود سيارتك بحالة الوكالة" },
             { id: 3, title: "عازل حراري", desc: "أفلام حماية أصلية لراحة تامة من حرارة الشمس" },
-            { id: 4, title: "زينة وإكسسوارات", desc: "أحدث التقنيات والإضافات لرفع رفاهية سيارتك" }
+            { id: 4, title: "زينة وإكسسوارات", desc: "أحدث التقنيات والإضافات لرفع رفاهية سيارتك" },
+            { id: 5, title: "نانو سيراميك", desc: "حماية فائقة للمعان يدوم طويلاً" },
+            { id: 6, title: "رش جنوط", desc: "ألوان جذابة ومقاومة للخدوش وعوامل الطريق" },
+            { id: 7, title: "تنجيد مقاعد", desc: "تفصيل وتنجيد بأجود أنواع الجلود الفاخرة" },
+            { id: 8, title: "شاشات أندرويد", desc: "أحدث الشاشات الذكية لتجربة قيادة ممتعة" },
+            { id: 9, title: "إضاءات محيطية", desc: "أجواء داخلية ساحرة ومتعددة الألوان" },
+            { id: 10, title: "تلميع داخلي", desc: "تنظيف وتعقيم عميق لمقصورة السيارة" },
+            { id: 11, title: "تلميع خارجي", desc: "إزالة الخدوش والدوائر وإعادة اللمعان المذهل" },
+            { id: 12, title: "حماية الواجهة", desc: "أفلام PPF لحماية مقدمة السيارة من الرمال" },
+            { id: 13, title: "تجليد وتغيير لون", desc: "تغيير لون السيارة بأفلام احترافية ومميزة" },
+            { id: 14, title: "تلميع شمعات", desc: "إعادة إضاءة المصابيح كالجديدة تماماً" },
+            { id: 15, title: "تلبيس أرضيات", desc: "حماية الأرضيات بجلد دايموند الفاخر" },
+            { id: 16, title: "كاميرات محيطية", desc: "أنظمة رؤية 360 درجة لمزيد من الأمان" },
+            { id: 17, title: "أنظمة صوتية", desc: "ترقية سماعات ومضخمات الصوت لأداء نقي" },
+            { id: 18, title: "دعامات حماية", desc: "تركيب دعامات حماية خارجية للسيارات" },
+            { id: 19, title: "تظليل زجاج", desc: "نسب عزل حراري عالية ومطابقة لأنظمة المرور" },
+            { id: 20, title: "عناية فائقة", desc: "باقات متكاملة للعناية بالسيارة من الداخل والخارج" },
+
           ].map((s) => (
             <div key={s.id} className="group bg-gray-800/40 backdrop-blur-sm rounded-[2rem] overflow-hidden border border-gray-700 hover:border-blue-500 transition-all duration-500 shadow-2xl">
               <div className="h-64 overflow-hidden">
@@ -104,24 +117,26 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 4. قسم معرض الفيديوهات */}
+      {/* 4. قسم معرض الفيديوهات (تمت إضافة 3 فيديوهات) */}
       <section className="py-24 bg-black/40 relative z-10 overflow-hidden">
         <div className="max-w-7xl mx-auto px-4">
-          <h2 className="text-4xl font-bold mb-12 text-right text-blue-500 italic">إبداعاتنا بالفيديو</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <div className="relative h-[500px] bg-gray-800 rounded-3xl overflow-hidden border border-gray-700 group">
-              <video
-                src="/videos/v1.webm"
-                className="w-full h-full object-cover opacity-60 group-hover:opacity-100 transition-opacity"
-                autoPlay
-                muted
-                loop
-                playsInline
-              />
-              <div className="absolute bottom-6 right-6 text-right">
-                <p className="text-white font-bold text-lg shadow-black drop-shadow-md">لمسة إبداع</p>
+          <h2 className="text-4xl font-bold mb-12 text-center md:text-right text-blue-500 italic">إبداعاتنا بالفيديو</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {[1, 2, 3].map((v) => (
+              <div key={v} className="relative h-[500px] bg-gray-800 rounded-3xl overflow-hidden border border-gray-700 group">
+                <video
+                  src={`/videos/v${v}.webm`}
+                  className="w-full h-full object-cover opacity-60 group-hover:opacity-100 transition-opacity"
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                />
+                <div className="absolute bottom-6 right-6 text-right z-10">
+                  <p className="text-white font-bold text-lg shadow-black drop-shadow-md">لمسة إبداع {v}</p>
+                </div>
               </div>
-            </div>
+            ))}
           </div>
         </div>
       </section>
