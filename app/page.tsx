@@ -12,10 +12,10 @@ export default function Home() {
   const phoneLink = "tel:+966553368215";
 
   // 📍 1. الرابط العادي لتطبيق الخرائط عند ضغط الأزرار العائمة
-  const googleMapsLink = "https://maps.app.goo.gl/92KfYsdiz2KrYp9m6"; 
+  const googleMapsLink = "https://maps.app.goo.gl/YtzAW2UCTb5amgFQA"; 
 
-  // 🗺️ 2. رابط التضمين البرمجي (Embed) الجاهز الذي يظهر الإبرة الحمراء بدقة فوق موقع الورشة بالغرابي
-  const iframeSrc = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3625.545719323164!2d46.723707!3d24.643806!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e2f03f7e5bf5555%3A0x6334f590b59b56f!2z2YPYp9ix2LPYqtmF2YrZhCwg2KfZhNi62LHYp9io2YDynamicYp9mE2LnZhdmE2Cw!5e0!3m2!1sar!2ssa!4v1715880000000!5m2!1sar!2ssa";
+  // 🗺️ 2. رابط التضمين البرمجي (Embed) الذي يظهر الإبرة الحمراء بدقة فوق موقع الورشة بالغرابي
+  const iframeSrc = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3625.5976527582504!2d46.7214777!3d24.6547633!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e2f050058ec1441%3A0xe21577dd4f7be1df!2z2Y some92KfYsdiz2KrYp9mK2YTYjCDYp9mE2Ybad9ix2KfYqNmK2Iwg2KfZhNix2YrYp9i2IDEyNjQ0!5e0!3m2!1sar!2ssa!4v1715880000000!5m2!1sar!2ssa";
 
   // 🔗 رابط إضافة التقييم المباشر
   const googleReviewLink = "https://g.page/r/Cd_j_pTnHdnuEBI/review";
