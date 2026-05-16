@@ -18,7 +18,7 @@ export default function Home() {
   const googleReviewLink = 
     "https://g.page/r/Cd_j_pTnHdnuEBI/review";
 
-  // 🔗 تنظيف الرابط لمنع أي كراش في مفسر المتصفح
+  // 🔗 رابط حراج النظيف
   const harajLink =
     "https://haraj.com.sa/users/طلاء_السيارات_الرياض_الغرابي/rate";
 
@@ -90,7 +90,7 @@ export default function Home() {
           </svg>
         </a>
 
-        {/* text-white p-4 rounded-full shadow-lg hover:scale-110 transition duration-300 flex items-center justify-center */}
+        {/* الاتصال */}
         <a
           href={phoneLink}
           className="bg-blue-600 hover:bg-blue-500 text-white p-4 rounded-full shadow-lg hover:scale-110 transition duration-300 flex items-center justify-center"
@@ -134,7 +134,7 @@ export default function Home() {
           </svg>
         </a>
 
-        {/* زر حراج العائم النصي */}
+        {/* زر حراج العائم النصي المعتمد */}
         <a
           href={harajLink}
           target="_blank"
@@ -172,7 +172,6 @@ export default function Home() {
       {/* Hero */}
       <section className="relative flex flex-col items-center justify-center text-center min-h-[95vh] px-4">
         <div className="absolute inset-0 z-0">
-          {/* 💡 الصورة الأولى معتمة ومثالية كخلفية */}
           <img
             src="/images/1.webp"
             alt="كارستايل لرش وزينة السيارات في الرياض"
@@ -208,9 +207,8 @@ export default function Home() {
             >
               أعمالنا
             </a>
-            
-            {/* زر حراج الرئيسي النصي */}
-            
+
+            <a
               href={phoneLink}
               className="bg-gray-100 hover:bg-white text-gray-900 px-12 py-4 rounded-full font-bold text-lg shadow-xl hover:-translate-y-1 transition-all w-full sm:w-auto text-center"
             >
@@ -269,7 +267,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* معرض الفيديوهات */}
+      {/* معرض الفيديوهات المحصن */}
       <section className="py-24 bg-black/40 relative z-10 overflow-hidden">
         <div className="max-w-7xl mx-auto px-4">
           <h2 className="text-4xl font-bold mb-12 text-center md:text-right text-blue-500 italic">
@@ -282,7 +280,6 @@ export default function Home() {
                 key={v}
                 className="relative h-[500px] bg-gray-800 rounded-3xl overflow-hidden border border-gray-700 group"
               >
-                {/* 🛠️ حل مشكلة اختفاء الفيديوهات النهائي باستخدام التوجيه المزدوج للصيغ */}
                 <video
                   className="w-full h-full object-cover opacity-100 brightness-110 contrast-105 transition-opacity"
                   autoPlay
@@ -335,7 +332,6 @@ export default function Home() {
 
           {/* 🔘 أزرار التفاعل المحدثة */}
           <div className="text-center mt-14 flex flex-wrap justify-center items-center gap-6">
-            {/* زر إضافة التقييم بالرابط المباشر الجديد */}
             <a
               href={googleReviewLink}
               target="_blank"
@@ -345,7 +341,6 @@ export default function Home() {
               اضغط هنا لتقييمنا على قوقل ⭐
             </a>
 
-            {/* زر استعراض التقييمات */}
             <a
               href={googleMapsLink}
               target="_blank"
