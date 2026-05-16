@@ -16,7 +16,7 @@ export default function Home() {
     "https://maps.google.com/?q=الرياض";
 
   const harajLink =
-    "https://haraj.com.sa/users/%D8%B7%D9%84%D8%A7%D8%A1%D8%A7%D9%8السيارات%20الرياض%20الغرابي/rate";
+    "https://haraj.com.sa/users/%D8%B7%D9%84%D8%A7%D8%A1%D8%A7%D9%84%D8%B3%D9%8A%D8%A7%D8%B1%D8%AA%20%D8%A7%D9%84%D8%B1%D9%8A%D8%A7%D8%B6%20%D8%A7%D9%84%D8%BA%D8%B1%D8%A7%D8%A8%D9%8A/rate";
 
   // اكتشاف المتصفح الداخلي
   const [isInAppBrowser, setIsInAppBrowser] = useState(false);
@@ -36,6 +36,29 @@ export default function Home() {
       setIsInAppBrowser(true);
     }
   }, []);
+
+  // أيقونة موقع حراج الرسمية المرسومة بدقة SVG (الدائرة الزرقاء مع كلمة حراج مائلة بالداخل)
+  const HarajIcon = () => (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 100 100"
+      className="w-7 h-7"
+    >
+      <circle cx="50" cy="50" r="48" fill="#0066CC" />
+      <g fill="#FFFFFF" transform="rotate(-10 50 50)">
+        {/* حرف ح */}
+        <path d="M72 38 C72 38, 60 38, 56 42 C52 46, 52 52, 58 52 C64 52, 70 46, 70 46" stroke="#FFFFFF" strokeWidth="5" strokeLinecap="round" strokeLinejoin="round" fill="none" />
+        {/* حرف ر */}
+        <path d="M52 46 Q44 48, 40 58" stroke="#FFFFFF" strokeWidth="5" strokeLinecap="round" fill="none" />
+        {/* حرف ا */}
+        <path d="M38 34 L32 62" stroke="#FFFFFF" strokeWidth="5" strokeLinecap="round" fill="none" />
+        {/* حرف ج */}
+        <path d="M34 44 C34 44, 22 44, 18 48 C14 52, 14 58, 20 58 C26 58, 32 52, 32 52" stroke="#FFFFFF" strokeWidth="5" strokeLinecap="round" strokeLinejoin="round" fill="none" />
+        {/* نقطة الجيم */}
+        <circle cx="22" cy="68" r="3.5" />
+      </g>
+    </svg>
+  );
 
   return (
     <main
@@ -130,23 +153,15 @@ export default function Home() {
           </svg>
         </a>
 
-        {/* زر حراج العائم بالأيقونة الرسمية */}
+        {/* زر حراج العائم بالأيقونة واللون الأزرق الرسمي */}
         <a
           href={harajLink}
           target="_blank"
           rel="noopener noreferrer"
-          className="bg-[#FF9900] hover:bg-[#e68a00] text-white p-4 rounded-full shadow-lg hover:scale-110 transition duration-300 flex items-center justify-center"
+          className="bg-[#0066CC] hover:bg-[#0052a3] text-white p-3 rounded-full shadow-lg hover:scale-110 transition duration-300 flex items-center justify-center border border-white/10"
           title="تقييمات حراج"
         >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="currentColor"
-          >
-            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z" />
-          </svg>
+          <HarajIcon />
         </a>
 
         {/* تيك توك */}
@@ -212,22 +227,14 @@ export default function Home() {
               أعمالنا
             </a>
             
-            {/* زر حراج الرئيسي بالأيقونة والنص المحدث */}
+            {/* زر حراج الرئيسي بالأيقونة الرسمية واللون الأزرق والنص المحدث */}
             <a
               href={harajLink}
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-[#FF9900] hover:bg-[#e68a00] text-white px-12 py-4 rounded-full font-bold text-lg shadow-xl hover:-translate-y-1 transition-all w-full sm:w-auto flex items-center justify-center gap-2 text-center"
+              className="bg-[#0066CC] hover:bg-[#0052a3] text-white px-12 py-4 rounded-full font-bold text-lg shadow-xl hover:-translate-y-1 transition-all w-full sm:w-auto flex items-center justify-center gap-3 text-center border border-white/10"
             >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="20"
-                height="20"
-                viewBox="0 0 24 24"
-                fill="currentColor"
-              >
-                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z" />
-              </svg>
+              <HarajIcon />
               تقييمات حراج
             </a>
 
@@ -249,101 +256,25 @@ export default function Home() {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
           {[
-            {
-              id: 2,
-              title: "تلميع ساطع",
-              desc: "نستخدم أجود المواد لتعود سيارتك بحالة الوكالة",
-            },
-            {
-              id: 3,
-              title: "عازل حراري",
-              desc: "أفلام حماية أصلية لراحة تامة من حرارة الشمس",
-            },
-            {
-              id: 4,
-              title: "زينة وإكسسوارات",
-              desc: "أحدث التقنيات والإضافات لرفع رفاهية سيارتك",
-            },
-            {
-              id: 5,
-              title: "نانو سيراميك",
-              desc: "حماية فائقة للمعان يدوم طويلاً",
-            },
-            {
-              id: 6,
-              title: "رش جنوط",
-              desc: "ألوان جذابة ومقاومة للخدوش وعوامل الطريق",
-            },
-            {
-              id: 7,
-              title: "تنجيد مقاعد",
-              desc: "تفصيل وتنجيد بأجود أنواع الجلود الفاخرة",
-            },
-            {
-              id: 8,
-              title: "شاشات أندرويد",
-              desc: "أحدث الشاشات الذكية لتجربة قيادة ممتعة",
-            },
-            {
-              id: 9,
-              title: "إضاءات محيطية",
-              desc: "أجواء داخلية ساحرة ومتعددة الألوان",
-            },
-            {
-              id: 10,
-              title: "تلميع داخلي",
-              desc: "تنظيف وتعقيم عميق لمقصورة السيارة",
-            },
-            {
-              id: 11,
-              title: "تلميع خارجي",
-              desc: "إزالة الخدوش والدوائر وإعادة اللمعان المذهل",
-            },
-            {
-              id: 12,
-              title: "حماية الواجهة",
-              desc: "أفلام PPF لحماية مقدمة السيارة من الرمال",
-            },
-            {
-              id: 13,
-              title: "تجليد وتغيير لون",
-              desc: "تغيير لون السيارة بأفلام احترافية ومميزة",
-            },
-            {
-              id: 14,
-              title: "تلميع شمعات",
-              desc: "إعادة إضاءة المصابيح كالجديدة تماماً",
-            },
-            {
-              id: 15,
-              title: "تلبيس أرضيات",
-              desc: "حماية الأرضيات بجلد دايموند الفاخر",
-            },
-            {
-              id: 16,
-              title: "كاميرات محيطية",
-              desc: "أنظمة رؤية 360 درجة لمزيد من الأمان",
-            },
-            {
-              id: 17,
-              title: "أنظمة صوتية",
-              desc: "ترقية سماعات ومضخمات الصوت لأداء نقي",
-            },
-            {
-              id: 18,
-              title: "دعامات حماية",
-              desc: "تركيب دعامات حماية خارجية للسيارات",
-            },
-            {
-              id: 19,
-              title: "تظليل زجاج",
-              desc: "نسب عزل حراري عالية ومطابقة لأنظمة المرور",
-            },
-            {
-              id: 20,
-              title: "عناية فائقة",
-              desc: "باقات متكاملة للعناية بالسيارة من الداخل والخارج",
-            },
+            { id: 2, title: "تلميع ساطع", desc: "نستخدم أجود المواد لتعود سيارتك بحالة الوكالة" },
+            { id: 3, title: "عازل حراري", desc: "أفلام حماية أصلية لراحة تامة من حرارة الشمس" },
+            { id: 4, title: "زينة وإكسسوارات", desc: "أحدث التقنيات والإضافات لرفع رفاهية سيارتك" },
+            { id: 5, title: "نانو سيراميك", desc: "حماية فائقة للمعان يدوم طويلاً" },
+            { id: 6, title: "رش جنوط", desc: "ألوان جذابة ومقاومة للخدوش وعوامل الطريق" },
+            { id: 7, title: "تنجيد مقاعد", desc: "تفصيل وتنجيد بأجود أنواع الجلود الفاخرة" },
+            { id: 8, title: "شاشات أندرويد", desc: "أحدث الشاشات الذكية لتجربة قيادة ممتعة" },
+            { id: 9, title: "إضاءات محيطية", desc: "أجواء داخلية ساحرة ومتعددة الألوان" },
+            { id: 10, title: "تلميع داخلي", desc: "تنظيف وتعقيم عميق لمقصورة السيارة" },
+            { id: 11, title: "تلميع خارجي", desc: "إزالة الخدوش والدوائر وإعادة اللمعان المذهل" },
+            { id: 12, title: "حماية الواجهة", desc: "أفلام PPF لحماية مقدمة السيارة من الرمال" },
+            { id: 13, title: "تجليد وتغيير لون", desc: "تغيير لون السيارة بأفلام احترافية ومميزة" },
+            { id: 14, title: "تلميع شمعات", desc: "إعادة إضاءة المصابيح كالجديدة تماماً" },
+            { id: 15, title: "تلبيس أرضيات", desc: "حماية الأرضيات بجلد دايموند الفاخر" },
+            { id: 16, title: "كاميرات محيطية", desc: "أنظمة رؤية 360 درجة لمزيد من الأمان" },
+            { id: 17, title: "أنظمة صوتية", desc: "ترقية سماعات ومضخمات الصوت لأداء نقي" },
+            { id: 18, title: "دعامات حماية", desc: "تركيب دعامات حماية خارجية للسيارات" },
+            { id: 19, title: "تظليل زجاج", desc: "نسب عزل حراري عالية ومطابقة لأنظمة المرور" },
+            { id: 20, title: "عناية فائقة", desc: "باقات متكاملة للعناية بالسيارة من الداخل والخارج" },
           ].map((s) => (
             <div
               key={s.id}
@@ -408,36 +339,20 @@ export default function Home() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {[
-              {
-                name: "دهانات ديكورات ترميم",
-                text: "شغل ممتاز",
-              },
-              {
-                name: "علي أبو ماجد",
-                text: "ماشاءالله",
-              },
+              { name: "دهانات ديكورات ترميم", text: "شغل ممتاز" },
+              { name: "علي أبو ماجد", text: "ماشاءالله" },
             ].map((review, i) => (
               <div
                 key={i}
                 className="bg-gray-800/70 border border-gray-700 rounded-3xl p-8 shadow-2xl hover:border-blue-500 transition-all"
               >
                 <div className="flex items-center justify-between mb-6">
-                  <h3 className="text-white font-bold text-xl">
-                    {review.name}
-                  </h3>
-
-                  <span className="text-green-400 text-sm">
-                    تقييم موثق من خرائط قوقل
-                  </span>
+                  <h3 className="text-white font-bold text-xl">{review.name}</h3>
+                  <span className="text-green-400 text-sm">تقييم موثق من خرائط قوقل</span>
                 </div>
 
-                <div className="text-yellow-400 text-2xl mb-4">
-                  ⭐⭐⭐⭐⭐
-                </div>
-
-                <p className="text-gray-300 text-lg leading-8">
-                  {review.text}
-                </p>
+                <div className="text-yellow-400 text-2xl mb-4">⭐⭐⭐⭐⭐</div>
+                <p className="text-gray-300 text-lg leading-8">{review.text}</p>
               </div>
             ))}
           </div>
@@ -474,13 +389,11 @@ export default function Home() {
               </h4>
 
               <p className="text-gray-300 text-xl font-bold">
-                السبت - الخميس:
-                <span className="text-white"> 9:00 ص - 11:00 م</span>
+                السبت - الخميس: <span className="text-white"> 9:00 ص - 11:00 م</span>
               </p>
 
               <p className="text-gray-300 text-xl font-bold">
-                الجمعة:
-                <span className="text-white"> 2:00 م - 11:00 م</span>
+                الجمعة: <span className="text-white"> 2:00 م - 11:00 م</span>
               </p>
             </div>
 
@@ -502,7 +415,6 @@ export default function Home() {
 
           <div className="border-t border-gray-800 pt-8 mt-8 flex justify-between items-center text-gray-500 text-sm">
             <p>© 2026 كارستايل - جميع الحقوق محفوظة</p>
-
             <p>تطوير: علي صالح</p>
           </div>
         </div>
