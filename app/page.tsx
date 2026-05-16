@@ -11,8 +11,9 @@ export default function Home() {
 
   const phoneLink = "tel:+966553368215";
 
+  // 📍 رابط الخرائط الجغرافي الفعلي للمحل لفتح التطبيق مباشرة عند الضغط
   const googleMapsLink =
-    "https://maps.app.goo.gl/mWdPnqfxNkcpfa2t6";
+    "https://maps.google.com/?q=طلاء_السيارات_الرياض_الغرابي";
 
   // 🔗 رابط إضافة التقييم المباشر
   const googleReviewLink = 
@@ -134,7 +135,7 @@ export default function Home() {
           </svg>
         </a>
 
-        {/* زر حراج العائم النصي المعتمد */}
+        {/* زر حراج العائم */}
         <a
           href={harajLink}
           target="_blank"
@@ -330,7 +331,6 @@ export default function Home() {
             ))}
           </div>
 
-          {/* 🔘 أزرار التفاعل المحدثة */}
           <div className="text-center mt-14 flex flex-wrap justify-center items-center gap-6">
             <a
               href={googleReviewLink}
@@ -353,47 +353,66 @@ export default function Home() {
         </div>
       </section>
 
-      {/* الفوتر */}
+      {/* الفوتر مع ميزة الخريطة التفاعلية وزر التوجيه الفوري */}
       <footer className="relative py-24 px-4 overflow-hidden text-center z-10 border-t border-gray-800">
         <div className="absolute inset-0 z-0">
           <img
             src="/images/5.webp"
             alt="موقع كارستايل في الرياض"
-            className="w-full h-full object-cover opacity-40 brightness-110"
+            className="w-full h-full object-cover opacity-30 brightness-50"
           />
-          <div className="absolute inset-0 bg-black/40"></div>
+          <div className="absolute inset-0 bg-black/60"></div>
         </div>
 
-        <div className="relative z-10 max-w-5xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-16 mb-16 items-center">
-            <div className="text-right md:pr-10 border-r-0 md:border-r-2 border-blue-600">
+        <div className="relative z-10 max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-16 items-start">
+            
+            {/* أوقات العمل */}
+            <div className="text-right md:pr-10 border-r-0 md:border-r-2 border-blue-600 h-full flex flex-col justify-center py-4">
               <h4 className="text-blue-500 font-black mb-6 uppercase tracking-widest text-2xl italic">
                 أوقات العمل
               </h4>
-
-              <p className="text-gray-300 text-xl font-bold">
+              <p className="text-gray-300 text-xl font-bold mb-2">
                 السبت - الخميس: <span className="text-white"> 9:00 ص - 11:00 م</span>
               </p>
-
               <p className="text-gray-300 text-xl font-bold">
                 الجمعة: <span className="text-white"> 2:00 م - 11:00 م</span>
               </p>
             </div>
 
-            <div className="flex flex-col items-center justify-center">
+            {/* 🗺️ صندوق الخريطة التفاعلي الاحترافي المطابق للصورة تماماً */}
+            <div className="flex flex-col items-center justify-center w-full">
               <h4 className="text-blue-500 font-black mb-6 uppercase tracking-widest text-2xl italic">
-                موقعنا
+                موقعنا الجغرافي
               </h4>
 
-              <a
-                href={googleMapsLink}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="bg-white/10 border border-white/20 hover:bg-white/20 px-10 py-5 rounded-2xl text-white font-bold transition-all shadow-lg"
-              >
-                فتح الموقع في الخرائط 📍
-              </a>
+              <div className="relative w-full max-w-md h-64 bg-gray-800 rounded-2xl overflow-hidden border border-gray-700 shadow-2xl group">
+                
+                {/* زر الفتح العلوي الذكي (تم تكراره فوق الخريطة بنفس ستايل الصورة المعروضة تماماً) */}
+                <a
+                  href={googleMapsLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="absolute top-3 right-3 z-20 bg-white/90 hover:bg-white text-gray-900 font-bold text-xs py-2 px-3 rounded-md shadow-lg transition-all flex items-center gap-1 border border-gray-200"
+                >
+                  <svg className="w-3 h-3 text-blue-600" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                  </svg>
+                  الفتح في "خرائط Google" ↗
+                </a>
+
+                {/* iframe التضمين المباشر لخريطة قوقل */}
+                <iframe
+                  title="موقع كارستايل الرياض"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3624.509749506646!2d46.7214!3d24.6641!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e2f03f3ffffffff%3A0x0!2z2YPYp9ix2LPYqtmK2YQg2YTYRegular2K_ZhtmK2KfYqiDYp9mE2LHZDynamictiN_Yp9mE2Ybarw!5e0!3m2!1sar!2ssa!4v1715880000000!5m2!1sar!2ssa"
+                  className="w-full h-full border-0 opacity-85 group-hover:opacity-100 transition-opacity"
+                  allowFullScreen={true}
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                ></iframe>
+              </div>
             </div>
+
           </div>
 
           <div className="border-t border-gray-800 pt-8 mt-8 flex justify-between items-center text-gray-500 text-sm">
