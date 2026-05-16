@@ -16,7 +16,7 @@ export default function Home() {
     "https://maps.google.com/?q=الرياض";
 
   const harajLink =
-    "https://haraj.com.sa/users/%D8%B7%D9%84%D8%A7%D8%A1%D8%A7%D9%84%D8%B3%D9%8A%D8%A7%D8%B1%D8%AA%20%D8%A7%D9%84%D8%B1%D9%8A%D8%A7%D8%B6%20%D8%A7%D9%84%D8%BA%D8%B1%D8%A7%D8%A8%D9%8A/rate";
+    "https://haraj.com.sa/users/%D8%B7%D9%8لاالسيارات%20الرياض%20الغرابي/rate";
 
   // اكتشاف المتصفح الداخلي
   const [isInAppBrowser, setIsInAppBrowser] = useState(false);
@@ -37,12 +37,12 @@ export default function Home() {
     }
   }, []);
 
-  // أيقونة موقع حراج الرسمية المرسومة بدقة SVG (الدائرة الزرقاء مع كلمة حراج مائلة بالداخل)
-  const HarajIcon = () => (
+  // أيقونة حراج الرسمية المحدثة والمثبتة الأبعاد من لقطة الشاشة (الدائرة الزرقاء مع كلمة حراج)
+  const HarajIcon = ({ className = "w-6 h-6" }: { className?: string }) => (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 100 100"
-      className="w-7 h-7"
+      className={className}
     >
       <circle cx="50" cy="50" r="48" fill="#0066CC" />
       <g fill="#FFFFFF" transform="rotate(-10 50 50)">
@@ -62,48 +62,33 @@ export default function Home() {
 
   return (
     <main
-      className="min-h-screen bg-gray-900 text-gray-50 font-sans relative overflow-hidden text-right"
+      className="min-h-screen bg-gray-900 text-gray-50 font-sans relative overflow-hidden text-right animate-fadeIn"
       dir="rtl"
     >
-      {/* 🛑 الشريط الذكي */}
+      {/* 🛑 الشريط الذكي للمتصفحات الداخلية */}
       {isInAppBrowser && (
         <div className="bg-red-600/95 backdrop-blur-md text-white text-center py-3 px-4 text-sm md:text-base font-bold sticky top-0 z-[100] shadow-2xl border-b-2 border-red-400 flex flex-col items-center justify-center animate-pulse">
           <span className="text-lg">⚠️ تنبيه هام لعملائنا</span>
-
           <span className="font-normal text-xs md:text-sm mt-1">
-            لتعمل أزرار (الواتساب والاتصال)، يرجى الضغط على{" "}
-            <strong className="bg-white/20 px-1 rounded">
-              الثلاث نقاط ⠇
-            </strong>{" "}
+            لتعمل أزرار (الواتساب والاتصال) بكفاءة، يرجى الضغط على{" "}
+            <strong className="bg-white/20 px-1 rounded">الثلاث نقاط ⠇</strong>{" "}
             بالأعلى واختيار{" "}
-            <strong className="bg-white/20 px-1 rounded">
-              فتح في المتصفح
-            </strong>
+            <strong className="bg-white/20 px-1 rounded">فتح في المتصفح</strong>
           </span>
         </div>
       )}
 
-      {/* الأزرار العائمة */}
-      <div className="fixed bottom-6 right-6 flex flex-col gap-4 z-50">
+      {/* 📱 مجموعة الأزرار العائمة الجانبية */}
+      <div className="fixed bottom-6 right-6 flex flex-col gap-3 z-50 pointer-events-auto">
         {/* الخرائط */}
         <a
           href={googleMapsLink}
           target="_blank"
           rel="noopener noreferrer"
-          className="bg-red-500 hover:bg-red-400 text-white p-4 rounded-full shadow-lg hover:scale-110 transition duration-300 flex items-center justify-center"
+          className="bg-red-500 hover:bg-red-400 text-white p-3.5 rounded-full shadow-xl hover:scale-110 transition duration-300 flex items-center justify-center"
           title="موقعنا على الخريطة"
         >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          >
+          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
             <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
             <circle cx="12" cy="10" r="3"></circle>
           </svg>
@@ -112,20 +97,10 @@ export default function Home() {
         {/* الاتصال */}
         <a
           href={phoneLink}
-          className="bg-blue-600 hover:bg-blue-500 text-white p-4 rounded-full shadow-lg hover:scale-110 transition duration-300 flex items-center justify-center"
+          className="bg-blue-600 hover:bg-blue-500 text-white p-3.5 rounded-full shadow-xl hover:scale-110 transition duration-300 flex items-center justify-center"
           title="اتصل بنا"
         >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          >
+          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
             <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
           </svg>
         </a>
@@ -135,33 +110,23 @@ export default function Home() {
           href={whatsappLink}
           target="_blank"
           rel="noopener noreferrer"
-          className="bg-green-500 hover:bg-green-400 text-white p-4 rounded-full shadow-lg hover:scale-110 transition duration-300 flex items-center justify-center"
+          className="bg-green-500 hover:bg-green-400 text-white p-3.5 rounded-full shadow-xl hover:scale-110 transition duration-300 flex items-center justify-center"
           title="واتساب"
         >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          >
+          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
             <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
           </svg>
         </a>
 
-        {/* زر حراج العائم بالأيقونة واللون الأزرق الرسمي */}
+        {/* زر حراج العائم الدائري النظيف */}
         <a
           href={harajLink}
           target="_blank"
           rel="noopener noreferrer"
-          className="bg-[#0066CC] hover:bg-[#0052a3] text-white p-3 rounded-full shadow-lg hover:scale-110 transition duration-300 flex items-center justify-center border border-white/10"
+          className="bg-[#0066CC] hover:bg-[#0052a3] p-3 rounded-full shadow-xl hover:scale-110 transition duration-300 flex items-center justify-center border border-white/10"
           title="تقييمات حراج"
         >
-          <HarajIcon />
+          <HarajIcon className="w-7 h-7" />
         </a>
 
         {/* تيك توك */}
@@ -169,51 +134,42 @@ export default function Home() {
           href={tiktokLink}
           target="_blank"
           rel="noopener noreferrer"
-          className="bg-black border border-gray-700 hover:bg-gray-800 text-white p-4 rounded-full shadow-lg hover:scale-110 transition duration-300 flex items-center justify-center"
+          className="bg-black border border-gray-700 hover:bg-gray-800 text-white p-3.5 rounded-full shadow-xl hover:scale-110 transition duration-300 flex items-center justify-center"
           title="تيك توك"
         >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          >
+          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
             <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"></path>
           </svg>
         </a>
       </div>
 
-      {/* Hero */}
-      <section className="relative flex flex-col items-center justify-center text-center min-h-[95vh] px-4">
+      {/* Hero Section */}
+      <section className="relative flex flex-col items-center justify-center text-center min-h-screen px-4">
         <div className="absolute inset-0 z-0">
           <img
             src="/images/1.webp"
             alt="كارستايل لرش وزينة السيارات في الرياض"
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-black/40"></div>
+          <div className="absolute inset-0 bg-black/60"></div>
         </div>
 
-        <div className="relative z-10 max-w-5xl mt-10">
-          <h1 className="text-7xl md:text-[10rem] font-black mb-4 text-transparent bg-clip-text bg-gradient-to-t from-blue-500 to-white drop-shadow-[0_0_15px_rgba(59,130,246,0.5)] italic tracking-tighter leading-none text-center uppercase">
+        <div className="relative z-10 max-w-4xl mt-12 w-full px-2">
+          <h1 className="text-6xl md:text-9xl font-black mb-4 text-transparent bg-clip-text bg-gradient-to-t from-blue-500 to-white drop-shadow-[0_0_15px_rgba(59,130,246,0.4)] italic tracking-tighter leading-none text-center uppercase animate-slideUp">
             CAR STYLE
           </h1>
 
-          <p className="text-xl md:text-3xl mb-12 text-gray-200 font-bold tracking-[0.3em] uppercase text-center bg-black/30 py-2 px-6 rounded-full inline-block backdrop-blur-sm">
+          <p className="text-lg md:text-2xl mb-12 text-gray-200 font-bold tracking-wide text-center bg-black/40 py-2 px-6 rounded-full inline-block backdrop-blur-sm">
             إبداع بلا حدود في عالم زينة السيارات
           </p>
 
-          <div className="flex flex-wrap justify-center gap-6">
+          {/* الأزرار الرئيسية المرتبة وبدون تداخل الأيقونات */}
+          <div className="flex flex-col sm:grid sm:grid-cols-2 gap-4 max-w-2xl mx-auto w-full">
             <a
               href={whatsappLink}
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-blue-600 hover:bg-blue-500 text-white px-12 py-4 rounded-full font-bold text-lg shadow-xl hover:-translate-y-1 transition-all w-full sm:w-auto text-center"
+              className="bg-blue-600 hover:bg-blue-500 text-white py-4 rounded-xl font-bold text-lg shadow-lg hover:-translate-y-0.5 transition-all text-center flex items-center justify-center gap-2"
             >
               حجز موعد
             </a>
@@ -222,25 +178,24 @@ export default function Home() {
               href={tiktokLink}
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-white/10 backdrop-blur-md border border-white/20 text-white px-12 py-4 rounded-full font-bold text-lg hover:bg-white/20 transition-all w-full sm:w-auto text-center"
+              className="bg-white/10 backdrop-blur-md border border-white/20 text-white py-4 rounded-xl font-bold text-lg hover:bg-white/20 transition-all text-center flex items-center justify-center gap-2"
             >
               أعمالنا
             </a>
             
-            {/* زر حراج الرئيسي بالأيقونة الرسمية واللون الأزرق والنص المحدث */}
             <a
               href={harajLink}
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-[#0066CC] hover:bg-[#0052a3] text-white px-12 py-4 rounded-full font-bold text-lg shadow-xl hover:-translate-y-1 transition-all w-full sm:w-auto flex items-center justify-center gap-3 text-center border border-white/10"
+              className="bg-[#0066CC] hover:bg-[#0052a3] text-white py-4 rounded-xl font-bold text-lg shadow-lg hover:-translate-y-0.5 transition-all text-center flex items-center justify-center gap-2 border border-white/10"
             >
-              <HarajIcon />
-              تقييمات حراج
+              <HarajIcon className="w-6 h-6 inline-block" />
+              <span>تقييمات حراج</span>
             </a>
 
             <a
               href={phoneLink}
-              className="bg-gray-100 hover:bg-white text-gray-900 px-12 py-4 rounded-full font-bold text-lg shadow-xl hover:-translate-y-1 transition-all w-full sm:w-auto text-center"
+              className="bg-gray-100 hover:bg-white text-gray-900 py-4 rounded-xl font-bold text-lg shadow-lg hover:-translate-y-0.5 transition-all text-center flex items-center justify-center gap-2"
             >
               اتصل بنا
             </a>
@@ -248,7 +203,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* الخدمات */}
+      {/* قسم الخدمات */}
       <section className="py-24 px-4 max-w-7xl mx-auto relative z-10">
         <h2 className="text-4xl font-bold mb-16 text-center text-white italic">
           أعمالنا وخدماتنا
@@ -284,10 +239,9 @@ export default function Home() {
                 <img
                   src={`/images/${s.id}.webp`}
                   alt={`${s.title} في الرياض - كارستايل`}
-                  className="w-full h-full object-cover opacity-100 group-hover:opacity-100 group-hover:scale-110 transition-all duration-700"
+                  className="w-full h-full object-cover opacity-90 group-hover:opacity-100 group-hover:scale-110 transition-all duration-700"
                 />
               </div>
-
               <div className="p-8 text-center text-white font-bold">
                 <h3 className="text-2xl mb-3">{s.title}</h3>
                 <p className="text-gray-400 font-normal">{s.desc}</p>
@@ -297,30 +251,28 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 4. قسم معرض الفيديوهات */}
+      {/* قسم معرض الفيديوهات */}
       <section className="py-24 bg-black/40 relative z-10 overflow-hidden">
         <div className="max-w-7xl mx-auto px-4">
           <h2 className="text-4xl font-bold mb-12 text-center md:text-right text-blue-500 italic">
             إبداعاتنا بالفيديو
           </h2>
-
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {[1, 2, 3].map((v) => (
               <div
                 key={v}
-                className="relative h-[500px] bg-gray-800 rounded-3xl overflow-hidden border border-gray-700 group"
+                className="relative h-[500px] bg-gray-800 rounded-3xl overflow-hidden border border-gray-700 group shadow-xl"
               >
                 <video
                   src={`/videos/v${v}.webm`}
-                  className="w-full h-full object-cover opacity-100 group-hover:opacity-100 transition-opacity"
+                  className="w-full h-full object-cover"
                   autoPlay
                   muted
                   loop
                   playsInline
                 />
-
                 <div className="absolute bottom-6 right-6 text-right z-10">
-                  <p className="text-white font-bold text-lg shadow-black drop-shadow-md">
+                  <p className="text-white font-bold text-lg drop-shadow-md">
                     لمسة إبداع {v}
                   </p>
                 </div>
@@ -336,7 +288,6 @@ export default function Home() {
           <h2 className="text-4xl font-bold text-center text-white mb-16">
             تقييمات عملائنا ⭐
           </h2>
-
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {[
               { name: "دهانات ديكورات ترميم", text: "شغل ممتاز" },
@@ -350,19 +301,17 @@ export default function Home() {
                   <h3 className="text-white font-bold text-xl">{review.name}</h3>
                   <span className="text-green-400 text-sm">تقييم موثق من خرائط قوقل</span>
                 </div>
-
-                <div className="text-yellow-400 text-2xl mb-4">⭐⭐⭐⭐⭐</div>
+                <div className="text-yellow-400 text-2xl mb-4">⭐⭐⭐⭐•</div>
                 <p className="text-gray-300 text-lg leading-8">{review.text}</p>
               </div>
             ))}
           </div>
-
           <div className="text-center mt-14">
             <a
               href={googleMapsLink}
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-blue-600 hover:bg-blue-500 text-white px-10 py-5 rounded-full font-bold text-lg shadow-xl hover:-translate-y-1 transition-all"
+              className="bg-blue-600 hover:bg-blue-500 text-white px-10 py-5 rounded-full font-bold text-lg shadow-xl hover:-translate-y-1 transition-all inline-block"
             >
               مشاهدة جميع تقييمات قوقل
             </a>
@@ -376,9 +325,9 @@ export default function Home() {
           <img
             src="/images/5.webp"
             alt="موقع كارستايل في الرياض"
-            className="w-full h-full object-cover opacity-30"
+            className="w-full h-full object-cover opacity-20"
           />
-          <div className="absolute inset-0 bg-black/50"></div>
+          <div className="absolute inset-0 bg-black/60"></div>
         </div>
 
         <div className="relative z-10 max-w-5xl mx-auto">
@@ -387,11 +336,9 @@ export default function Home() {
               <h4 className="text-blue-500 font-black mb-6 uppercase tracking-widest text-2xl italic">
                 أوقات العمل
               </h4>
-
               <p className="text-gray-300 text-xl font-bold">
                 السبت - الخميس: <span className="text-white"> 9:00 ص - 11:00 م</span>
               </p>
-
               <p className="text-gray-300 text-xl font-bold">
                 الجمعة: <span className="text-white"> 2:00 م - 11:00 م</span>
               </p>
@@ -401,19 +348,18 @@ export default function Home() {
               <h4 className="text-blue-500 font-black mb-6 uppercase tracking-widest text-2xl italic">
                 موقعنا
               </h4>
-
               <a
                 href={googleMapsLink}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-white/10 border border-white/20 hover:bg-white/20 px-10 py-5 rounded-2xl text-white font-bold transition-all shadow-lg"
+                className="bg-white/10 border border-white/20 hover:bg-white/20 px-10 py-5 rounded-2xl text-white font-bold transition-all shadow-lg inline-block"
               >
                 فتح الموقع في الخرائط 📍
               </a>
             </div>
           </div>
 
-          <div className="border-t border-gray-800 pt-8 mt-8 flex justify-between items-center text-gray-500 text-sm">
+          <div className="border-t border-gray-800 pt-8 mt-8 flex flex-col md:flex-row justify-between items-center text-gray-500 text-sm gap-4">
             <p>© 2026 كارستايل - جميع الحقوق محفوظة</p>
             <p>تطوير: علي صالح</p>
           </div>
