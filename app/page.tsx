@@ -159,8 +159,7 @@ export default function Home() {
             className="w-full h-full object-cover"
           />
 
-          <div className="absolute inset-0 bg-black/70 backdrop-blur-[2px]"></div>
-        </div>
+          <div className="absolute inset-0 bg-black/40"></div>
 
         <div className="relative z-10 max-w-5xl mt-10">
           <h1 className="text-7xl md:text-[10rem] font-black mb-4 text-transparent bg-clip-text bg-gradient-to-t from-blue-500 to-white drop-shadow-[0_0_15px_rgba(59,130,246,0.5)] italic tracking-tighter leading-none text-center uppercase">
@@ -312,7 +311,7 @@ export default function Home() {
                 <img
                   src={`/images/${s.id}.webp`}
                   alt={`${s.title} في الرياض - كارستايل`}
-                  className="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-110 transition-all duration-700"
+                  className="w-full h-full object-cover opacity-100 group-hover:opacity-100 group-hover:scale-110 transition-all duration-700"
                 />
               </div>
 
@@ -344,7 +343,7 @@ export default function Home() {
 
           <video
             src={`/videos/v${v}.webm`}
-            className="w-full h-full object-cover opacity-60 group-hover:opacity-100 transition-opacity"
+            className="w-full h-full object-cover opacity-100 group-hover:opacity-100 transition-opacity"
             autoPlay
             muted
             loop
