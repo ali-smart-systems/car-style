@@ -15,7 +15,7 @@ export default function Home() {
     "https://maps.app.goo.gl/mWdPnqfxNkcpfa2t6";
 
   const harajLink =
-    "https://haraj.com.sa/users/%D8%B7%D9%84%D8%A7%D8%A1%D8%A7%D9%84%D8%B3%D9%8A%D8%A7%D8%B1%D8%AA%20%D8%A7%D9%84%D8%B1%D9%8A%D8%A7%D8%B6%20%D8%A7%D9%84%D8%BA%D8%B1%D8%A7%D8%A8%D9%8ا/rate";
+    "https://haraj.com.sa/users/%D8%B7%D9%84%D8%A7%D8%A1%D8%A7%D9%84%D8%B3%D9%8A%D8%A7%D8%B1%D8%AA%20%D8%A7%D9%84%D8%B1%D9%8A%D8%A7%D8%B6%20%D8%A7%D9%84%D8%BA%D8%B1%D8%A7%D8%A8%D9%8A/rate";
 
   // اكتشاف المتصفح الداخلي
   const [isInAppBrowser, setIsInAppBrowser] = useState(false);
@@ -35,29 +35,6 @@ export default function Home() {
       setIsInAppBrowser(true);
     }
   }, []);
-
-  // أيقونة موقع حراج الرسمية المرسومة بدقة SVG (الدائرة الزرقاء مع كلمة حراج مائلة بالداخل)
-  const HarajIcon = () => (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 100 100"
-      className="w-6 h-6 shrink-0"
-    >
-      <circle cx="50" cy="50" r="48" fill="#0066CC" />
-      <g fill="#FFFFFF" transform="rotate(-10 50 50)">
-        {/* حرف ح */}
-        <path d="M72 38 C72 38, 60 38, 56 42 C52 46, 52 52, 58 52 C64 52, 70 46, 70 46" stroke="#FFFFFF" strokeWidth="5" strokeLinecap="round" strokeLinejoin="round" fill="none" />
-        {/* حرف ر */}
-        <path d="M52 46 Q44 48, 40 58" stroke="#FFFFFF" strokeWidth="5" strokeLinecap="round" fill="none" />
-        {/* حرف ا */}
-        <path d="M38 34 L32 62" stroke="#FFFFFF" strokeWidth="5" strokeLinecap="round" fill="none" />
-        {/* حرف ج */}
-        <path d="M34 44 C34 44, 22 44, 18 48 C14 52, 14 58, 20 58 C26 58, 32 52, 32 52" stroke="#FFFFFF" strokeWidth="5" strokeLinecap="round" strokeLinejoin="round" fill="none" />
-        {/* نقطة الجيم */}
-        <circle cx="22" cy="68" r="3.5" />
-      </g>
-    </svg>
-  );
 
   return (
     <main
@@ -152,15 +129,15 @@ export default function Home() {
           </svg>
         </a>
 
-        {/* زر حراج العائم بالأيقونة واللون الأزرق الرسمي */}
+        {/* 🏷️ زر حراج العائم: تم تحويله بالكامل لنص "حراج" داخل دائرة متناسقة وبدون أيقونة */}
         <a
           href={harajLink}
           target="_blank"
           rel="noopener noreferrer"
-          className="bg-[#0066CC] hover:bg-[#0052a3] text-white p-3 rounded-full shadow-lg hover:scale-110 transition duration-300 flex items-center justify-center border border-white/10"
+          className="bg-[#0066CC] hover:bg-[#0052a3] text-white w-14 h-14 rounded-full shadow-lg hover:scale-110 transition duration-300 flex items-center justify-center border border-white/10 font-black text-sm"
           title="حراج"
         >
-          <HarajIcon />
+          حراج
         </a>
 
         {/* تيك توك */}
@@ -190,13 +167,14 @@ export default function Home() {
       {/* Hero */}
       <section className="relative flex flex-col items-center justify-center text-center min-h-[95vh] px-4">
         <div className="absolute inset-0 z-0">
+          {/* 💡 تم تعتيم الصورة الأولى هنا لتعمل كخلفية داكنة واحترافية */}
           <img
             src="/images/1.webp"
             alt="كارستايل لرش وزينة السيارات في الرياض"
-            className="w-full h-full object-cover brightness-110"
+            className="w-full h-full object-cover brightness-50"
           />
-          {/* 💡 تم تخفيف التعتيم هنا لرفع إضاءة الواجهة الرئيسية الخلفية */}
-          <div className="absolute inset-0 bg-black/25"></div>
+          {/* 💡 تم زيادة عمق طبقة التعتيم لإبراز النصوص الأمامية */}
+          <div className="absolute inset-0 bg-black/65"></div>
         </div>
 
         <div className="relative z-10 max-w-5xl mt-10">
@@ -227,14 +205,14 @@ export default function Home() {
               أعمالنا
             </a>
             
+            {/* 🏷️ زر حراج الرئيسي: تم إزالة الأيقونة والاعتماد على كلمة "حراج" نصاً بخط عريض */}
             <a
               href={harajLink}
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-[#0066CC] hover:bg-[#0052a3] text-white px-12 py-4 rounded-full font-bold text-lg shadow-xl hover:-translate-y-1 transition-all w-full sm:w-auto flex items-center justify-center gap-3 text-center border border-white/10"
+              className="bg-[#0066CC] hover:bg-[#0052a3] text-white px-12 py-4 rounded-full font-bold text-lg shadow-xl hover:-translate-y-1 transition-all w-full sm:w-auto text-center border border-white/10"
             >
-              <HarajIcon />
-              <span>حراج</span>
+              حراج
             </a>
 
             <a
@@ -261,7 +239,7 @@ export default function Home() {
             { id: 5, title: "نانو سيراميك", desc: "حماية فائقة للمعان يدوم طويلاً" },
             { id: 6, title: "رش جنوط", desc: "ألوان جذابة ومقاومة للخدوش وعوامل الطريق" },
             { id: 7, title: "تنجيد مقاعد", desc: "تفصيل وتنجيد بأجود أنواع الجلود الفاخرة" },
-            { id: 8, title: "سمكرة وتعديل صدمات", desc: "إصلاح الصدم الصدمات والبودي بأحدث التقنيات الاحترافية" },
+            { id: 8, title: "سمكرة وتعديل صدمات", desc: "إصلاح الصدمات والبودي بأحدث التقنيات الاحترافية" },
             { id: 9, title: "إضاءات محيطية (ليد)", desc: "تركيب إضاءات زينة داخلية متناسقة وجذابة" },
             { id: 10, title: "تلميع داخلي عميق", desc: "تنظيف وتعقيم كامل لمقصورة السيارة والمقاعد" },
             { id: 11, title: "تلميع خارجي وإزالة خدوش", desc: "إزالة الدوائر والخدوش السطحية وإعادة اللمعان المذهل" },
@@ -279,7 +257,6 @@ export default function Home() {
               key={s.id}
               className="group bg-gray-800/40 backdrop-blur-sm rounded-[2rem] overflow-hidden border border-gray-700 hover:border-blue-500 transition-all duration-500 shadow-2xl"
             >
-              {/* 💡 أضفت brightness-110 و contrast-105 لرفع السطوع والوضوح لصور الخدمات بالكامل */}
               <div className="h-64 overflow-hidden">
                 <img
                   src={`/images/${s.id}.webp`}
@@ -310,7 +287,6 @@ export default function Home() {
                 key={v}
                 className="relative h-[500px] bg-gray-800 rounded-3xl overflow-hidden border border-gray-700 group"
               >
-                {/* 💡 أضفت brightness-110 هنا لرفع إضاءة وسطوع الفيديوهات المعروضة */}
                 <video
                   src={`/videos/v${v}.webm`}
                   className="w-full h-full object-cover opacity-100 brightness-110 contrast-105 transition-opacity"
@@ -379,7 +355,6 @@ export default function Home() {
             alt="موقع كارستايل في الرياض"
             className="w-full h-full object-cover opacity-40 brightness-110"
           />
-          {/* 💡 خففت التعتيم هنا أيضاً لتصبح صورة الفوتر السفلية واضحة ومشرقة */}
           <div className="absolute inset-0 bg-black/40"></div>
         </div>
 
