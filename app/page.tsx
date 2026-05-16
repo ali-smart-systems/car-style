@@ -12,10 +12,10 @@ export default function Home() {
   const phoneLink = "tel:+966553368215";
 
   const googleMapsLink =
-  "https://maps.app.goo.gl/bzXpThGWnaCMqWmf8";
+    "https://maps.app.goo.gl/bzXpThGWnaCMqWmf8";
 
-const harajLink =
-  "https://haraj.com.sa/users/%D8%B7%D9%84%D8%A7%D8%A1%D8%A7%D9%84%D8%B3%D9%8A%D8%A7%D8%B1%D8%AA%20%D8%A7%D9%84%D8%B1%D9%8A%D8%A7%D8%B6%20%D8%A7%D9%84%D8%BA%D8%B1%D8%A7%D8%A8%D9%8A/rate"; "https://maps.app.goo.gl/bzXpThGWnaCMqWmf8";
+  const harajLink =
+    "https://haraj.com.sa/users/%D8%B7%D9%84%D8%A7%D8%A1%D8%A7%D9%84%D8%B3%D9%8A%D8%A7%D8%B1%D8%AA%20%D8%A7%D9%84%D8%B1%D9%8A%D8%A7%D8%B6%20%D8%A7%D9%84%D8%BA%D8%B1%D8%A7%D8%A8%D9%8A/rate";
 
   // اكتشاف المتصفح الداخلي
   const [isInAppBrowser, setIsInAppBrowser] = useState(false);
@@ -128,16 +128,18 @@ const harajLink =
             <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
           </svg>
         </a>
-{/* زر حراج */}
-<a
-  href={harajLink}
-  target="_blank"
-  rel="noopener noreferrer"
-  className="bg-orange-500 hover:bg-orange-400 text-white p-4 rounded-full shadow-lg hover:scale-110 transition duration-300 flex items-center justify-center"
-  title="تقييمات حراج"
->
-  <span className="font-black text-sm">حراج</span>
-</a>
+
+        {/* زر حراج */}
+        <a
+          href={harajLink}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="bg-orange-500 hover:bg-orange-400 text-white p-4 rounded-full shadow-lg hover:scale-110 transition duration-300 flex items-center justify-center"
+          title="تقييمات حراج"
+        >
+          <span className="font-black text-sm">حراج</span>
+        </a>
+
         {/* تيك توك */}
         <a
           href={tiktokLink}
@@ -161,6 +163,8 @@ const harajLink =
           </svg>
         </a>
       </div>
+
+    
 
       {/* Hero */}
       <section className="relative flex flex-col items-center justify-center text-center min-h-[95vh] px-4">
