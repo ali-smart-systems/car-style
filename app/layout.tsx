@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
@@ -11,6 +11,12 @@ const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
 });
+
+// 🛠️ الإعداد الصحيح للـ Viewport في Next.js 14/15 لمنع تحذيرات الـ Build
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+};
 
 // إعدادات الـ Metadata المحسنة للسيو المحلي
 export const metadata: Metadata = {
@@ -43,8 +49,6 @@ export const metadata: Metadata = {
   ],
 
   authors: [{ name: "Ali Saleh" }],
-
-  viewport: "width=device-width, initial-scale=1",
 
   robots: {
     index: true,
@@ -96,7 +100,7 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-gray-900">
-
+        
         {children}
 
         {/* Local Business Schema لتحسين ظهور الموقع في قوقل */}
@@ -125,8 +129,9 @@ export default function RootLayout({
               areaServed: "الرياض",
 
               sameAs: [
-                "https://maps.app.goo.gl/bzXpThGWnaCMqWmf8",
+                "https://maps.app.goo.gl/mWdPnqfxNkcpfa2t6",
                 "https://www.tiktok.com/@user1853168014566",
+                "https://g.page/r/Cd_j_pTnHdnuEBI/review"
               ],
 
               aggregateRating: {
