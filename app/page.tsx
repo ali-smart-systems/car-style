@@ -210,16 +210,7 @@ export default function Home() {
             </a>
             
             {/* زر حراج الرئيسي النصي */}
-            <a
-              href={harajLink}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bg-[#0066CC] hover:bg-[#0052a3] text-white px-12 py-4 rounded-full font-bold text-lg shadow-xl hover:-translate-y-1 transition-all w-full sm:w-auto text-center border border-white/10"
-            >
-              حراج
-            </a>
-
-            <a
+            
               href={phoneLink}
               className="bg-gray-100 hover:bg-white text-gray-900 px-12 py-4 rounded-full font-bold text-lg shadow-xl hover:-translate-y-1 transition-all w-full sm:w-auto text-center"
             >
