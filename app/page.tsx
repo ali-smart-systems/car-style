@@ -12,11 +12,11 @@ export default function Home() {
   const phoneLink = "tel:+966553368215";
 
   const googleMapsLink =
-    "https://maps.app.goo.gl/mWdPnqfxNkcpfa2t6";
+    "https://maps.app.goo.gl/kHaMA5Tbq2Pc2dyB9";
 
-  // 🗺️ رابط التضمين البرمجي (Embed) لتشغيل الخريطة التفاعلية داخل الصفحة
+  // 🗺️ رابط التضمين البرمجي (Embed) المحدث والمستخرج لـ كارستايل - الغرابي
   const iframeSrc =
-    "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3625.5976527582504!2d46.7214777!3d24.6547633!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e2f050058ec1441%3A0xe21577dd4f7be1df!2z2Y some92KfYsdiz2KrYp9mK2YTYjCDYp9mE2Ybad9ix2KfYqNmK2Iwg2KfZhNix2YrYp9i2IDEyNjQ0!5e0!3m2!1sar!2ssa!4v1715880000000!5m2!1sar!2ssa";
+    "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3625.5977931323385!2d46.7231454!3d24.6461011!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e2f05fd9b95f087%3A0xeed91de794fee3df!2z2YPYp9ix2LPYqtmK2KfZhCAtIOCdirix2LQg2KfZhNiz2YrYp6Future2KfYqiDYp9mE2Ybad9ix2KfYqNmK2Iwg2KfZhNix2YrYp6IdIDEyNjQ0!5e0!3m2!1sar!2ssa!4v1715880000000!5m2!1sar!2ssa";
 
   // 🔗 رابط إضافة التقييم المباشر
   const googleReviewLink = 
@@ -370,7 +370,7 @@ export default function Home() {
 
         <div className="relative z-10 max-w-6xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-16 items-start">
-            
+
             {/* أوقات العمل */}
             <div className="text-right md:pr-10 border-r-0 md:border-r-2 border-blue-600 h-full flex flex-col justify-center py-4">
               <h4 className="text-blue-500 font-black mb-6 uppercase tracking-widest text-2xl italic">
