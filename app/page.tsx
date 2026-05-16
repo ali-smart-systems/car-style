@@ -14,8 +14,12 @@ export default function Home() {
   const googleMapsLink =
     "https://maps.app.goo.gl/mWdPnqfxNkcpfa2t6";
 
+  // 🔗 رابط إضافة التقييم المباشر الجديد
+  const googleReviewLink = 
+    "https://g.page/r/Cd_j_pTnHdnuEBI/review";
+
   const harajLink =
-    "https://haraj.com.sa/users/%D8%B7%D9%84%D8%A7%D8%A1%D8%A7%D9%84%D8%B3%D9%8A%D8%A7%D8%B1%D8%AA%20%D8%A7%D9%84%D8%B1%D9%8A%D8%A7%D8%B6%20%D8%A7%D9%84%D8%BA%D8%B1%D8%A7%D8%A8%D9%8A/rate";
+    "https://haraj.com.sa/users/%D8%B7%D9%84%D8%A7%D8%A1%D8%A7%D9%8السيارات%20الرياض%20الغرابي/rate";
 
   // اكتشاف المتصفح الداخلي
   const [isInAppBrowser, setIsInAppBrowser] = useState(false);
@@ -129,7 +133,7 @@ export default function Home() {
           </svg>
         </a>
 
-        {/* 🏷️ زر حراج العائم: تم تحويله بالكامل لنص "حراج" داخل دائرة متناسقة وبدون أيقونة */}
+        {/* زر حراج العائم */}
         <a
           href={harajLink}
           target="_blank"
@@ -167,13 +171,11 @@ export default function Home() {
       {/* Hero */}
       <section className="relative flex flex-col items-center justify-center text-center min-h-[95vh] px-4">
         <div className="absolute inset-0 z-0">
-          {/* 💡 تم تعتيم الصورة الأولى هنا لتعمل كخلفية داكنة واحترافية */}
           <img
             src="/images/1.webp"
             alt="كارستايل لرش وزينة السيارات في الرياض"
             className="w-full h-full object-cover brightness-50"
           />
-          {/* 💡 تم زيادة عمق طبقة التعتيم لإبراز النصوص الأمامية */}
           <div className="absolute inset-0 bg-black/65"></div>
         </div>
 
@@ -205,7 +207,6 @@ export default function Home() {
               أعمالنا
             </a>
             
-            {/* 🏷️ زر حراج الرئيسي: تم إزالة الأيقونة والاعتماد على كلمة "حراج" نصاً بخط عريض */}
             <a
               href={harajLink}
               target="_blank"
@@ -334,14 +335,26 @@ export default function Home() {
             ))}
           </div>
 
-          <div className="text-center mt-14">
+          {/* 🔘 أزرار التفاعل تحت التقييمات */}
+          <div className="text-center mt-14 flex flex-wrap justify-center items-center gap-6">
+            {/* زر إضافة التقييم بالرابط المباشر */}
+            <a
+              href={googleReviewLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-blue-600 hover:bg-blue-500 text-white px-10 py-5 rounded-full font-bold text-lg shadow-xl hover:-translate-y-1 transition-all w-full sm:w-auto text-center"
+            >
+              اضغط هنا لتقييمنا على قوقل ⭐
+            </a>
+
+            {/* زر استعراض التقييمات القديم */}
             <a
               href={googleMapsLink}
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-blue-600 hover:bg-blue-500 text-white px-10 py-5 rounded-full font-bold text-lg shadow-xl hover:-translate-y-1 transition-all"
+              className="bg-white/10 backdrop-blur-md border border-white/20 text-white px-10 py-5 rounded-full font-bold text-lg hover:bg-white/20 transition-all w-full sm:w-auto text-center"
             >
-              مشاهدة جميع تقييمات قوقل
+              مشاهدة جميع التقييمات
             </a>
           </div>
         </div>
