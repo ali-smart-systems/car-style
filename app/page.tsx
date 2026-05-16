@@ -11,13 +11,13 @@ export default function Home() {
 
   const phoneLink = "tel:+966553368215";
 
-  // ⚠️ تنبيه: استبدل هذا بالرابط المباشر الطويل المستخرج من المتصفح لتجنب خطأ الـ Dynamic Link
+  // 🗺️ الرابط العادي الجديد والمباشر الذي أرسلته لي
   const googleMapsLink =
-    "https://maps.google.com/maps?q=كارستايل+الغرابي+الرياض"; 
+    "https://maps.app.goo.gl/HhcEkCwA2h9sih2m7";
 
-  // ⚠️ تنبيه: ضع هنا رابط التضمين (Embed src) الطويل الخاص بالخريطة لتظهر بشكل صحيح
+  // 🔗 رابط التضمين البرمجي (Embed) المحدث والمستخرج لـ كارستايل
   const iframeSrc =
-    "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3624.672!2d46.7207!3d24.6472!...";
+    "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3625.5977931323385!2d46.7231454!3d24.6461011!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e2f05fd9b95f087%3A0xeed91de794fee3df!2z2YPYp9ix2LPYqtmK2KfZhCAtIOCdirix2LQg2KfZhNiz2YrYp6Future2KfYqiDYp9mE2Ybad9ix2KfYqNmK2Iwg2KfZhNix2YrYp6IdIDEyNjQ0!5e0!3m2!1sar!2ssa!4v1715880000000!5m2!1sar!2ssa";
 
   // 🔗 رابط إضافة التقييم المباشر
   const googleReviewLink = 
@@ -356,14 +356,14 @@ export default function Home() {
             </a>
           </div>
 
-          {/* 🗺️ قسم الخريطة الذكية التفاعلية (تم نقله هنا بناءً على طلبك أسفل الأزرار مباشرة لحمايته من التداخل) */}
+          {/* 🗺️ قسم الخريطة الذكية التفاعلية المدمج أسفل الأزرار مباشرة */}
           <div className="flex flex-col items-center justify-center w-full mt-24">
             <h4 className="text-blue-500 font-black mb-6 uppercase tracking-widest text-2xl italic text-center">
               موقعنا الجغرافي
             </h4>
 
             <div className="relative w-full max-w-3xl h-96 bg-gray-800 rounded-3xl overflow-hidden border border-gray-700 shadow-2xl group">
-              {/* زر علوي عائم لفتح قوقل ماب مباشرة */}
+              {/* زر علوي عائم لفتح قوقل ماب مباشرة بالرابط الصحيح المعدل */}
               <a
                 href={googleMapsLink}
                 target="_blank"
@@ -373,7 +373,7 @@ export default function Home() {
                 الفتح في "خرائط Google" ↗
               </a>
 
-              {/* عنصر الخريطة التفاعلية */}
+              {/* عنصر الخريطة التفاعلية برابط التضمين البرمجي الأصلي */}
               <iframe
                 title="موقع كارستايل الرياض الغرابي"
                 src={iframeSrc}
@@ -387,7 +387,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* الفوتر المطور - يحتوي الآن على أوقات العمل والحقوق فقط بشكل ممركّز وأنيق */}
+      {/* الفوتر المطور - يحتوي على أوقات العمل والحقوق فقط بشكل متناسق ومستقل */}
       <footer className="relative py-16 px-4 overflow-hidden text-center z-10 border-t border-gray-800">
         <div className="absolute inset-0 z-0">
           <img
@@ -399,7 +399,7 @@ export default function Home() {
         </div>
 
         <div className="relative z-10 max-w-6xl mx-auto">
-          {/* أوقات العمل ممركزة بشكل جذاب */}
+          {/* أوقات العمل */}
           <div className="text-center flex flex-col justify-center items-center py-4 mb-10">
             <h4 className="text-blue-500 font-black mb-6 uppercase tracking-widest text-2xl italic">
               أوقات العمل
