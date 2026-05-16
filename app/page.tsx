@@ -11,12 +11,12 @@ export default function Home() {
 
   const phoneLink = "tel:+966553368215";
 
-  // قم بتغيير هذا الرابط برابط "مشاركة الموقع" الفعلي من تطبيق قوقل ماب للورشة
+  // ✅ تم التصحيح وإعادة الرابط الأصلي بدقة كما كان
   const googleMapsLink =
-    "https://maps.google.com/?q=الرياض";
+    "https://maps.app.goo.gl/mWdPnqfxNkcpfa2t6";
 
   const harajLink =
-    "https://haraj.com.sa/users/%D8%B7%D9%84%D8%A7%D8%Aء%D8%A7%D9%8السيارات%20الرياض%20الغرابي/rate";
+    "https://haraj.com.sa/users/%D8%B7%D9%84%D8%A7%D8%A1%D8%A7%D9%84%D8%B3%D9%8A%D8%A7%D8%B1%D8%AA%20%D8%A7%D9%84%D8%B1%D9%8A%D8%A7%D8%B6%20%D8%A7%D9%84%D8%BA%D8%B1%D8%A7%D8%A8%D9%8A/rate";
 
   // اكتشاف المتصفح الداخلي
   const [isInAppBrowser, setIsInAppBrowser] = useState(false);
@@ -248,7 +248,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* الخدمات - تم تصحيح الأوصاف لتناسب ورشة رش وتلميع وزينة بالكامل */}
+      {/* الخدمات */}
       <section className="py-24 px-4 max-w-7xl mx-auto relative z-10">
         <h2 className="text-4xl font-bold mb-16 text-center text-white italic">
           أعمالنا وخدماتنا
@@ -297,7 +297,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 4. قسم معرض الفيديوهات */}
+      {/* معرض الفيديوهات */}
       <section className="py-24 bg-black/40 relative z-10 overflow-hidden">
         <div className="max-w-7xl mx-auto px-4">
           <h2 className="text-4xl font-bold mb-12 text-center md:text-right text-blue-500 italic">
