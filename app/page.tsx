@@ -14,12 +14,13 @@ export default function Home() {
   const googleMapsLink =
     "https://maps.app.goo.gl/mWdPnqfxNkcpfa2t6";
 
-  // 🔗 رابط إضافة التقييم المباشر الجديد
+  // 🔗 رابط إضافة التقييم المباشر
   const googleReviewLink = 
     "https://g.page/r/Cd_j_pTnHdnuEBI/review";
 
+  // 🔗 تنظيف الرابط لمنع أي كراش في مفسر المتصفح
   const harajLink =
-    "https://haraj.com.sa/users/%D8%B7%D9%84%D8%A7%D8%A1%D8%A7%D9%8السيارات%20الرياض%20الغرابي/rate";
+    "https://haraj.com.sa/users/طلاء_السيارات_الرياض_الغرابي/rate";
 
   // اكتشاف المتصفح الداخلي
   const [isInAppBrowser, setIsInAppBrowser] = useState(false);
@@ -89,7 +90,7 @@ export default function Home() {
           </svg>
         </a>
 
-        {/* الاتصال */}
+        {/* text-white p-4 rounded-full shadow-lg hover:scale-110 transition duration-300 flex items-center justify-center */}
         <a
           href={phoneLink}
           className="bg-blue-600 hover:bg-blue-500 text-white p-4 rounded-full shadow-lg hover:scale-110 transition duration-300 flex items-center justify-center"
@@ -133,7 +134,7 @@ export default function Home() {
           </svg>
         </a>
 
-        {/* زر حراج العائم */}
+        {/* زر حراج العائم النصي */}
         <a
           href={harajLink}
           target="_blank"
@@ -171,6 +172,7 @@ export default function Home() {
       {/* Hero */}
       <section className="relative flex flex-col items-center justify-center text-center min-h-[95vh] px-4">
         <div className="absolute inset-0 z-0">
+          {/* 💡 الصورة الأولى معتمة ومثالية كخلفية */}
           <img
             src="/images/1.webp"
             alt="كارستايل لرش وزينة السيارات في الرياض"
@@ -207,6 +209,7 @@ export default function Home() {
               أعمالنا
             </a>
             
+            {/* زر حراج الرئيسي النصي */}
             <a
               href={harajLink}
               target="_blank"
@@ -288,14 +291,18 @@ export default function Home() {
                 key={v}
                 className="relative h-[500px] bg-gray-800 rounded-3xl overflow-hidden border border-gray-700 group"
               >
+                {/* 🛠️ حل مشكلة اختفاء الفيديوهات النهائي باستخدام التوجيه المزدوج للصيغ */}
                 <video
-                  src={`/videos/v${v}.webm`}
                   className="w-full h-full object-cover opacity-100 brightness-110 contrast-105 transition-opacity"
                   autoPlay
                   muted
                   loop
                   playsInline
-                />
+                >
+                  <source src={`/videos/v${v}.mp4`} type="video/mp4" />
+                  <source src={`/videos/v${v}.webm`} type="video/webm" />
+                  متصفحك لا يدعم تشغيل الفيديو.
+                </video>
 
                 <div className="absolute bottom-6 right-6 text-right z-10">
                   <p className="text-white font-bold text-lg shadow-black drop-shadow-md">
@@ -335,9 +342,9 @@ export default function Home() {
             ))}
           </div>
 
-          {/* 🔘 أزرار التفاعل تحت التقييمات */}
+          {/* 🔘 أزرار التفاعل المحدثة */}
           <div className="text-center mt-14 flex flex-wrap justify-center items-center gap-6">
-            {/* زر إضافة التقييم بالرابط المباشر */}
+            {/* زر إضافة التقييم بالرابط المباشر الجديد */}
             <a
               href={googleReviewLink}
               target="_blank"
@@ -347,7 +354,7 @@ export default function Home() {
               اضغط هنا لتقييمنا على قوقل ⭐
             </a>
 
-            {/* زر استعراض التقييمات القديم */}
+            {/* زر استعراض التقييمات */}
             <a
               href={googleMapsLink}
               target="_blank"
