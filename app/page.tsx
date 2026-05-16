@@ -16,7 +16,7 @@ export default function Home() {
     "https://maps.google.com/?q=الرياض";
 
   const harajLink =
-    "https://haraj.com.sa/users/%D8%B7%D9%84%D8%A7%D8%A1%D8%A7%D9%84%D8%B3%D9%8A%D8%A7%D8%B1%D8%AA%20%D8%A7%D9%84%D8%B1%D9%8A%D8%A7%D8%B6%20%D8%A7%D9%84%D8%BA%D8%B1%D8%A7%D8%A8%D9%8A/rate";
+    "https://haraj.com.sa/users/%D8%B7%D9%84%D8%A7%D8%Aء%D8%A7%D9%8السيارات%20الرياض%20الغرابي/rate";
 
   // اكتشاف المتصفح الداخلي
   const [isInAppBrowser, setIsInAppBrowser] = useState(false);
@@ -42,7 +42,7 @@ export default function Home() {
     <svg
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 100 100"
-      className="w-7 h-7"
+      className="w-6 h-6 shrink-0"
     >
       <circle cx="50" cy="50" r="48" fill="#0066CC" />
       <g fill="#FFFFFF" transform="rotate(-10 50 50)">
@@ -205,7 +205,7 @@ export default function Home() {
           </h1>
 
           <p className="text-xl md:text-3xl mb-12 text-gray-200 font-bold tracking-[0.3em] uppercase text-center bg-black/30 py-2 px-6 rounded-full inline-block backdrop-blur-sm">
-            إبداع بلا حدود في عالم زينة السيارات
+            إبداع بلا حدود في عالم رش وزينة السيارات
           </p>
 
           <div className="flex flex-wrap justify-center gap-6">
@@ -227,7 +227,7 @@ export default function Home() {
               أعمالنا
             </a>
             
-            {/* زر حراج الرئيسي بالأيقونة الرسمية واللون الأزرق والنص المحدث */}
+            {/* زر حراج الرئيسي المنسق بالكامل لمنع أي تداخل بصري */}
             <a
               href={harajLink}
               target="_blank"
@@ -235,7 +235,7 @@ export default function Home() {
               className="bg-[#0066CC] hover:bg-[#0052a3] text-white px-12 py-4 rounded-full font-bold text-lg shadow-xl hover:-translate-y-1 transition-all w-full sm:w-auto flex items-center justify-center gap-3 text-center border border-white/10"
             >
               <HarajIcon />
-              تقييمات حراج
+              <span>تقييمات حراج</span>
             </a>
 
             <a
@@ -248,7 +248,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* الخدمات */}
+      {/* الخدمات - تم تصحيح الأوصاف لتناسب ورشة رش وتلميع وزينة بالكامل */}
       <section className="py-24 px-4 max-w-7xl mx-auto relative z-10">
         <h2 className="text-4xl font-bold mb-16 text-center text-white italic">
           أعمالنا وخدماتنا
@@ -258,23 +258,23 @@ export default function Home() {
           {[
             { id: 2, title: "تلميع ساطع", desc: "نستخدم أجود المواد لتعود سيارتك بحالة الوكالة" },
             { id: 3, title: "عازل حراري", desc: "أفلام حماية أصلية لراحة تامة من حرارة الشمس" },
-            { id: 4, title: "زينة وإكسسوارات", desc: "أحدث التقنيات والإضافات لرفع رفاهية سيارتك" },
+            { id: 4, title: "رش بوية بالفرن", desc: "رش كامل أو جزئي بأجود أنواع الدهانات العالمية" },
             { id: 5, title: "نانو سيراميك", desc: "حماية فائقة للمعان يدوم طويلاً" },
             { id: 6, title: "رش جنوط", desc: "ألوان جذابة ومقاومة للخدوش وعوامل الطريق" },
             { id: 7, title: "تنجيد مقاعد", desc: "تفصيل وتنجيد بأجود أنواع الجلود الفاخرة" },
-            { id: 8, title: "شاشات أندرويد", desc: "أحدث الشاشات الذكية لتجربة قيادة ممتعة" },
-            { id: 9, title: "إضاءات محيطية", desc: "أجواء داخلية ساحرة ومتعددة الألوان" },
-            { id: 10, title: "تلميع داخلي", desc: "تنظيف وتعقيم عميق لمقصورة السيارة" },
-            { id: 11, title: "تلميع خارجي", desc: "إزالة الخدوش والدوائر وإعادة اللمعان المذهل" },
-            { id: 12, title: "حماية الواجهة", desc: "أفلام PPF لحماية مقدمة السيارة من الرمال" },
-            { id: 13, title: "تجليد وتغيير لون", desc: "تغيير لون السيارة بأفلام احترافية ومميزة" },
-            { id: 14, title: "تلميع شمعات", desc: "إعادة إضاءة المصابيح كالجديدة تماماً" },
-            { id: 15, title: "تلبيس أرضيات", desc: "حماية الأرضيات بجلد دايموند الفاخر" },
-            { id: 16, title: "كاميرات محيطية", desc: "أنظمة رؤية 360 درجة لمزيد من الأمان" },
-            { id: 17, title: "أنظمة صوتية", desc: "ترقية سماعات ومضخمات الصوت لأداء نقي" },
-            { id: 18, title: "دعامات حماية", desc: "تركيب دعامات حماية خارجية للسيارات" },
-            { id: 19, title: "تظليل زجاج", desc: "نسب عزل حراري عالية ومطابقة لأنظمة المرور" },
-            { id: 20, title: "عناية فائقة", desc: "باقات متكاملة للعناية بالسيارة من الداخل والخارج" },
+            { id: 8, title: "سمكرة وتعديل صدمات", desc: "إصلاح الصدمات والبودي بأحدث التقنيات الاحترافية" },
+            { id: 9, title: "إضاءات محيطية (ليد)", desc: "تركيب إضاءات زينة داخلية متناسقة وجذابة" },
+            { id: 10, title: "تلميع داخلي عميق", desc: "تنظيف وتعقيم كامل لمقصورة السيارة والمقاعد" },
+            { id: 11, title: "تلميع خارجي وإزالة خدوش", desc: "إزالة الدوائر والخدوش السطحية وإعادة اللمعان المذهل" },
+            { id: 12, title: "حماية الواجهة (PPF)", desc: "أفلام حماية شفافة لحماية مقدمة السيارة من السافي" },
+            { id: 13, title: "تجليد وتغيير لون", desc: "تغيير لون السيارة بالكامل بأفلام مطفية ولامعة مميزة" },
+            { id: 14, title: "تلميع وتجديد شمعات", desc: "إعادة إضاءة المصابيح الباهتة وإزالة الاصفرار كالجديدة" },
+            { id: 15, title: "تلبيس أرضيات", desc: "حماية الأرضيات بجلد دايموند الفاخر المقاوم للسوائل" },
+            { id: 16, title: "معالجة بهتان البوية", desc: "إعادة إحياء دهان السيارة القديم وتجديد رونقه" },
+            { id: 17, title: "تعديل بدون دهان (PDR)", desc: "شفط وتعديل الطقات البسيطة بدون الحاجة للرش" },
+            { id: 18, title: "رش مطفي مؤقت", desc: "تغيير مظهر السيارة برش قابل للإزالة لحماية الطلاء الأصلي" },
+            { id: 19, title: "تظليل زجاج عازل", desc: "نسب عزل حراري عالية ومطابقة لأنظمة المرور" },
+            { id: 20, title: "عناية وباقات متكاملة", desc: "باقات غسيل وتلميع وحماية متكاملة بأسعار تنافسية" },
           ].map((s) => (
             <div
               key={s.id}
