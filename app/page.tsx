@@ -11,12 +11,13 @@ export default function Home() {
 
   const phoneLink = "tel:+966553368215";
 
+  // ⚠️ تنبيه: استبدل هذا بالرابط المباشر الطويل المستخرج من المتصفح لتجنب خطأ الـ Dynamic Link
   const googleMapsLink =
-    "https://maps.app.goo.gl/kHaMA5Tbq2Pc2dyB9";
+    "https://maps.google.com/maps?q=كارستايل+الغرابي+الرياض"; 
 
-  // 🗺️ رابط التضمين البرمجي (Embed) المحدث والمستخرج لـ كارستايل - الغرابي
+  // ⚠️ تنبيه: ضع هنا رابط التضمين (Embed src) الطويل الخاص بالخريطة لتظهر بشكل صحيح
   const iframeSrc =
-    "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3625.5977931323385!2d46.7231454!3d24.6461011!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e2f05fd9b95f087%3A0xeed91de794fee3df!2z2YPYp9ix2LPYqtmK2KfZhCAtIOCdirix2LQg2KfZhNiz2YrYp6Future2KfYqiDYp9mE2Ybad9ix2KfYqNmK2Iwg2KfZhNix2YrYp6IdIDEyNjQ0!5e0!3m2!1sar!2ssa!4v1715880000000!5m2!1sar!2ssa";
+    "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3624.672!2d46.7207!3d24.6472!...";
 
   // 🔗 رابط إضافة التقييم المباشر
   const googleReviewLink = 
@@ -307,7 +308,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* تقييمات العملاء */}
+      {/* تقييمات العملاء والموقع الجغرافي المدمج أسفلها */}
       <section className="py-24 px-4 bg-gray-950 relative z-10">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-4xl font-bold text-center text-white mb-16">
@@ -354,66 +355,63 @@ export default function Home() {
               مشاهدة جميع التقييمات
             </a>
           </div>
+
+          {/* 🗺️ قسم الخريطة الذكية التفاعلية (تم نقله هنا بناءً على طلبك أسفل الأزرار مباشرة لحمايته من التداخل) */}
+          <div className="flex flex-col items-center justify-center w-full mt-24">
+            <h4 className="text-blue-500 font-black mb-6 uppercase tracking-widest text-2xl italic text-center">
+              موقعنا الجغرافي
+            </h4>
+
+            <div className="relative w-full max-w-3xl h-96 bg-gray-800 rounded-3xl overflow-hidden border border-gray-700 shadow-2xl group">
+              {/* زر علوي عائم لفتح قوقل ماب مباشرة */}
+              <a
+                href={googleMapsLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="absolute top-4 right-4 z-20 bg-white/95 hover:bg-white text-gray-900 font-bold text-xs py-2 px-4 rounded-xl shadow-lg transition-all flex items-center gap-1 border border-gray-200"
+              >
+                الفتح في "خرائط Google" ↗
+              </a>
+
+              {/* عنصر الخريطة التفاعلية */}
+              <iframe
+                title="موقع كارستايل الرياض الغرابي"
+                src={iframeSrc}
+                className="w-full h-full border-0 opacity-90 group-hover:opacity-100 transition-opacity"
+                allowFullScreen={true}
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              ></iframe>
+            </div>
+          </div>
         </div>
       </section>
 
-      {/* الفوتر المطور مع الخريطة التفاعلية */}
-      <footer className="relative py-24 px-4 overflow-hidden text-center z-10 border-t border-gray-800">
+      {/* الفوتر المطور - يحتوي الآن على أوقات العمل والحقوق فقط بشكل ممركّز وأنيق */}
+      <footer className="relative py-16 px-4 overflow-hidden text-center z-10 border-t border-gray-800">
         <div className="absolute inset-0 z-0">
           <img
             src="/images/5.webp"
             alt="موقع كارستايل في الرياض"
-            className="w-full h-full object-cover opacity-40 brightness-110"
+            className="w-full h-full object-cover opacity-20 brightness-110"
           />
-          <div className="absolute inset-0 bg-black/40"></div>
+          <div className="absolute inset-0 bg-black/60"></div>
         </div>
 
         <div className="relative z-10 max-w-6xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-16 items-start">
+          {/* أوقات العمل ممركزة بشكل جذاب */}
+          <div className="text-center flex flex-col justify-center items-center py-4 mb-10">
+            <h4 className="text-blue-500 font-black mb-6 uppercase tracking-widest text-2xl italic">
+              أوقات العمل
+            </h4>
 
-            {/* أوقات العمل */}
-            <div className="text-right md:pr-10 border-r-0 md:border-r-2 border-blue-600 h-full flex flex-col justify-center py-4">
-              <h4 className="text-blue-500 font-black mb-6 uppercase tracking-widest text-2xl italic">
-                أوقات العمل
-              </h4>
+            <p className="text-gray-300 text-xl font-bold mb-2">
+              السبت - الخميس: <span className="text-white">9:00 ص - 11:00 م</span>
+            </p>
 
-              <p className="text-gray-300 text-xl font-bold mb-2">
-                السبت - الخميس: <span className="text-white"> 9:00 ص - 11:00 م</span>
-              </p>
-
-              <p className="text-gray-300 text-xl font-bold">
-                الجمعة: <span className="text-white"> 2:00 م - 11:00 م</span>
-              </p>
-            </div>
-
-            {/* قسم الخريطة الذكية التفاعلية */}
-            <div className="flex flex-col items-center justify-center w-full">
-              <h4 className="text-blue-500 font-black mb-6 uppercase tracking-widest text-2xl italic">
-                موقعنا الجغرافي
-              </h4>
-
-              <div className="relative w-full max-w-md h-64 bg-gray-800 rounded-2xl overflow-hidden border border-gray-700 shadow-2xl group">
-                {/* زر علوي عائم لفتح قوقل ماب مباشرة */}
-                <a
-                  href={googleMapsLink}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="absolute top-3 right-3 z-20 bg-white/95 hover:bg-white text-gray-900 font-bold text-xs py-2 px-3 rounded-md shadow-lg transition-all flex items-center gap-1 border border-gray-200"
-                >
-                  الفتح في "خرائط Google" ↗
-                </a>
-
-                {/* عنصر الخريطة التفاعلية */}
-                <iframe
-                  title="موقع كارستايل الرياض الغرابي"
-                  src={iframeSrc}
-                  className="w-full h-full border-0 opacity-90 group-hover:opacity-100 transition-opacity"
-                  allowFullScreen={true}
-                  loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
-                ></iframe>
-              </div>
-            </div>
+            <p className="text-gray-300 text-xl font-bold">
+              الجمعة: <span className="text-white">2:00 م - 11:00 م</span>
+            </p>
           </div>
 
           <div className="border-t border-gray-800 pt-8 mt-8 flex justify-between items-center text-gray-500 text-sm">
