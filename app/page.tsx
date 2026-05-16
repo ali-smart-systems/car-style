@@ -12,8 +12,9 @@ export default function Home() {
   const phoneLink = "tel:+966553368215";
 
   const googleMapsLink =
+  "https://maps.app.goo.gl/bzXpThGWnaCMqWmf8";
 
-   const harajLink =
+const harajLink =
   "https://haraj.com.sa/users/%D8%B7%D9%84%D8%A7%D8%A1%D8%A7%D9%84%D8%B3%D9%8A%D8%A7%D8%B1%D8%AA%20%D8%A7%D9%84%D8%B1%D9%8A%D8%A7%D8%B6%20%D8%A7%D9%84%D8%BA%D8%B1%D8%A7%D8%A8%D9%8A/rate"; "https://maps.app.goo.gl/bzXpThGWnaCMqWmf8";
 
   // اكتشاف المتصفح الداخلي
