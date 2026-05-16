@@ -11,18 +11,19 @@ export default function Home() {
 
   const phoneLink = "tel:+966553368215";
 
+  // 🔗 الرابط المباشر للموقع لفتح تطبيق الخرائط (تم تحديثه ليوجه إلى موقعكم الصحيح بالغرابي)
   const googleMapsLink =
-    "https://maps.app.goo.gl/mWdPnqfxNkcpfa2t6";
+    "https://maps.app.goo.gl/uPphTn36zQJX9";
 
-  // 🗺️ رابط التضمين البرمجي (Embed) لتشغيل الخريطة التفاعلية داخل الصفحة
+  // 🗺️ رابط التضمين (Embed) الرسمي والخاص بـ "كارستايل - الغرابي" لإظهار الدبوس الأحمر بدقة داخل الموقع
   const iframeSrc =
-    "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3625.5976527582504!2d46.7214777!3d24.6547633!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e2f050058ec1441%3A0xe21577dd4f7be1df!2z2Y some92KfYsdiz2KrYp9mK2YTYjCDYp9mE2Ybad9ix2KfYqNmK2Iwg2KfZhNix2YrYp9i2IDEyNjQ0!5e0!3m2!1sar!2ssa!4v1715880000000!5m2!1sar!2ssa";
+    "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3626.5498877146524!2d46.7247738!3d24.6391484!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e2f03f7a07567e7%3A0xc33fe37b19dfbca3!2z2YPYp9ix2LPYqtin2YrZhA!5e0!3m2!1sar!2ssa!4v1715880000000!5m2!1sar!2ssa";
 
   // 🔗 رابط إضافة التقييم المباشر
   const googleReviewLink = 
     "https://g.page/r/Cd_j_pTnHdnuEBI/review";
 
-  // 🔗 رابط حراج النظيف
+  // 🔗 رابط حراج
   const harajLink =
     "https://haraj.com.sa/users/طلاء_السيارات_الرياض_الغرابي/rate";
 
@@ -138,7 +139,7 @@ export default function Home() {
           </svg>
         </a>
 
-        {/* زر حراج العائم النصي المعتمد */}
+        {/* زر حراج العائم */}
         <a
           href={harajLink}
           target="_blank"
@@ -271,7 +272,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* معرض الفيديوهات المحصن */}
+      {/* معرض الفيديوهات */}
       <section className="py-24 bg-black/40 relative z-10 overflow-hidden">
         <div className="max-w-7xl mx-auto px-4">
           <h2 className="text-4xl font-bold mb-12 text-center md:text-right text-blue-500 italic">
@@ -334,7 +335,6 @@ export default function Home() {
             ))}
           </div>
 
-          {/* 🔘 أزرار التفاعل المحدثة */}
           <div className="text-center mt-14 flex flex-wrap justify-center items-center gap-6">
             <a
               href={googleReviewLink}
@@ -357,7 +357,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* الفوتر المطور مع الخريطة التفاعلية */}
+      {/* الفوتر المصحح بالكامل */}
       <footer className="relative py-24 px-4 overflow-hidden text-center z-10 border-t border-gray-800">
         <div className="absolute inset-0 z-0">
           <img
@@ -386,26 +386,26 @@ export default function Home() {
               </p>
             </div>
 
-            {/* قسم الخريطة الذكية التفاعلية */}
+            {/* قسم الخريطة التفاعلية الصحيحة لـ كارستايل */}
             <div className="flex flex-col items-center justify-center w-full">
               <h4 className="text-blue-500 font-black mb-6 uppercase tracking-widest text-2xl italic">
                 موقعنا الجغرافي
               </h4>
 
               <div className="relative w-full max-w-md h-64 bg-gray-800 rounded-2xl overflow-hidden border border-gray-700 shadow-2xl group">
-                {/* زر علوي عائم لفتح قوقل ماب مباشرة */}
+                {/* زر علوي عائم للتوجه إلى تطبيق الخرائط مباشرة بموقعكم الصحيح */}
                 <a
                   href={googleMapsLink}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="absolute top-3 right-3 z-20 bg-white/95 hover:bg-white text-gray-900 font-bold text-xs py-2 px-3 rounded-md shadow-lg transition-all flex items-center gap-1 border border-gray-200"
+                  className="absolute top-3 right-3 z-20 bg-blue-600 hover:bg-blue-500 text-white font-bold text-xs py-2 px-3 rounded-md shadow-lg transition-all flex items-center gap-1 border border-white/10"
                 >
-                  الفتح في "خرائط Google" ↗
+                  الفتح في الخرائط 📍
                 </a>
 
-                {/* عنصر الخريطة التفاعلية */}
+                {/* عنصر الخريطة التفاعلية الحقيقية */}
                 <iframe
-                  title="موقع كارستايل الرياض الغرابي"
+                  title="موقع كارستايل الرياض حي العمل"
                   src={iframeSrc}
                   className="w-full h-full border-0 opacity-90 group-hover:opacity-100 transition-opacity"
                   allowFullScreen={true}
