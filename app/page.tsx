@@ -11,8 +11,9 @@ export default function Home() {
 
   const phoneLink = "tel:+966553368215";
 
+  // قم بتغيير هذا الرابط برابط "مشاركة الموقع" الفعلي من تطبيق قوقل ماب للورشة
   const googleMapsLink =
-    "https://maps.app.goo.gl/bzXpThGWnaCMqWmf8";
+    "https://maps.google.com/?q=الرياض";
 
   const harajLink =
     "https://haraj.com.sa/users/%D8%B7%D9%84%D8%A7%D8%A1%D8%A7%D9%84%D8%B3%D9%8A%D8%A7%D8%B1%D8%AA%20%D8%A7%D9%84%D8%B1%D9%8A%D8%A7%D8%B6%20%D8%A7%D9%84%D8%BA%D8%B1%D8%A7%D8%A8%D9%8A/rate";
@@ -164,21 +165,18 @@ export default function Home() {
         </a>
       </div>
 
-    
-
       {/* Hero */}
       <section className="relative flex flex-col items-center justify-center text-center min-h-[95vh] px-4">
         <div className="absolute inset-0 z-0">
-  <img
-    src="/images/1.webp"
-    alt="كارستايل لرش وزينة السيارات في الرياض"
-    className="w-full h-full object-cover"
-  />
+          <img
+            src="/images/1.webp"
+            alt="كارستايل لرش وزينة السيارات في الرياض"
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-black/40"></div>
+        </div>
 
-  <div className="absolute inset-0 bg-black/40"></div>
-</div>
-
-<div className="relative z-10 max-w-5xl mt-10">
+        <div className="relative z-10 max-w-5xl mt-10">
           <h1 className="text-7xl md:text-[10rem] font-black mb-4 text-transparent bg-clip-text bg-gradient-to-t from-blue-500 to-white drop-shadow-[0_0_15px_rgba(59,130,246,0.5)] italic tracking-tighter leading-none text-center uppercase">
             CAR STYLE
           </h1>
@@ -205,14 +203,14 @@ export default function Home() {
             >
               أعمالنا
             </a>
-<a
-  href={harajLink}
-  target="_blank"
-  rel="noopener noreferrer"
-  className="bg-orange-500 hover:bg-orange-400 text-white px-12 py-4 rounded-full font-bold text-lg shadow-xl hover:-translate-y-1 transition-all w-full sm:w-auto text-center"
->
-  تقييمات حراج
-</a>
+            <a
+              href={harajLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-orange-500 hover:bg-orange-400 text-white px-12 py-4 rounded-full font-bold text-lg shadow-xl hover:-translate-y-1 transition-all w-full sm:w-auto text-center"
+            >
+              تقييمات حراج
+            </a>
             <a
               href={phoneLink}
               className="bg-gray-100 hover:bg-white text-gray-900 px-12 py-4 rounded-full font-bold text-lg shadow-xl hover:-translate-y-1 transition-all w-full sm:w-auto text-center"
@@ -347,46 +345,39 @@ export default function Home() {
           ))}
         </div>
       </section>
-{/* 4. قسم معرض الفيديوهات */}
-<section className="py-24 bg-black/40 relative z-10 overflow-hidden">
 
-  <div className="max-w-7xl mx-auto px-4">
+      {/* 4. قسم معرض الفيديوهات */}
+      <section className="py-24 bg-black/40 relative z-10 overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4">
+          <h2 className="text-4xl font-bold mb-12 text-center md:text-right text-blue-500 italic">
+            إبداعاتنا بالفيديو
+          </h2>
 
-    <h2 className="text-4xl font-bold mb-12 text-center md:text-right text-blue-500 italic">
-      إبداعاتنا بالفيديو
-    </h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {[1, 2, 3].map((v) => (
+              <div
+                key={v}
+                className="relative h-[500px] bg-gray-800 rounded-3xl overflow-hidden border border-gray-700 group"
+              >
+                <video
+                  src={`/videos/v${v}.webm`}
+                  className="w-full h-full object-cover opacity-100 group-hover:opacity-100 transition-opacity"
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                />
 
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-
-      {[1, 2, 3].map((v) => (
-
-        <div
-          key={v}
-          className="relative h-[500px] bg-gray-800 rounded-3xl overflow-hidden border border-gray-700 group"
-        >
-
-          <video
-            src={`/videos/v${v}.webm`}
-            className="w-full h-full object-cover opacity-100 group-hover:opacity-100 transition-opacity"
-            autoPlay
-            muted
-            loop
-            playsInline
-          />
-
-          <div className="absolute bottom-6 right-6 text-right z-10">
-
-            <p className="text-white font-bold text-lg shadow-black drop-shadow-md">
-              لمسة إبداع {v}
-            </p>
-
+                <div className="absolute bottom-6 right-6 text-right z-10">
+                  <p className="text-white font-bold text-lg shadow-black drop-shadow-md">
+                    لمسة إبداع {v}
+                  </p>
+                </div>
+              </div>
+            ))}
           </div>
-
         </div>
-      ))}
-    </div>
-  </div>
-</section>
+      </section>
 
       {/* تقييمات العملاء */}
       <section className="py-24 px-4 bg-gray-950 relative z-10">
@@ -452,8 +443,8 @@ export default function Home() {
             alt="موقع كارستايل في الرياض"
             className="w-full h-full object-cover opacity-30"
           />
-
-         <div className="absolute inset-0 bg-black/50"></div>
+          <div className="absolute inset-0 bg-black/50"></div>
+        </div>
 
         <div className="relative z-10 max-w-5xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-16 mb-16 items-center">
