@@ -324,6 +324,46 @@ export default function Home() {
           ))}
         </div>
       </section>
+{/* 4. قسم معرض الفيديوهات */}
+<section className="py-24 bg-black/40 relative z-10 overflow-hidden">
+
+  <div className="max-w-7xl mx-auto px-4">
+
+    <h2 className="text-4xl font-bold mb-12 text-center md:text-right text-blue-500 italic">
+      إبداعاتنا بالفيديو
+    </h2>
+
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+      {[1, 2, 3].map((v) => (
+
+        <div
+          key={v}
+          className="relative h-[500px] bg-gray-800 rounded-3xl overflow-hidden border border-gray-700 group"
+        >
+
+          <video
+            src={`/videos/v${v}.webm`}
+            className="w-full h-full object-cover opacity-60 group-hover:opacity-100 transition-opacity"
+            autoPlay
+            muted
+            loop
+            playsInline
+          />
+
+          <div className="absolute bottom-6 right-6 text-right z-10">
+
+            <p className="text-white font-bold text-lg shadow-black drop-shadow-md">
+              لمسة إبداع {v}
+            </p>
+
+          </div>
+
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
 
       {/* تقييمات العملاء */}
       <section className="py-24 px-4 bg-gray-950 relative z-10">
