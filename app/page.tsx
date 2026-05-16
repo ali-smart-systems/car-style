@@ -402,12 +402,12 @@ export default function Home() {
 
               <p className="text-gray-300 text-xl font-bold">
                 السبت - الخميس:
-                <span className="text-white"> 9:00 ص - 10:00 م</span>
+                <span className="text-white"> 9:00 ص - 11:00 م</span>
               </p>
 
               <p className="text-gray-300 text-xl font-bold">
                 الجمعة:
-                <span className="text-white"> 4:00 م - 10:00 م</span>
+                <span className="text-white"> 2:00 م - 11:00 م</span>
               </p>
             </div>
 
