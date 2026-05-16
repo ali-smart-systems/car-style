@@ -16,7 +16,7 @@ export default function Home() {
     "https://maps.google.com/?q=الرياض";
 
   const harajLink =
-    "https://haraj.com.sa/users/%D8%B7%D9%84%D8%A7%D8%A1%D8%A7%D9%84%D8%B3%D9%8A%D8%A7%D8%B1%D8%AA%20%D8%A7%D9%84%D8%B1%D9%8A%D8%A7%D8%B6%20%D8%A7%D9%84%D8%BA%D8%B1%D8%A7%D8%A8%D9%8A/rate";
+    "https://haraj.com.sa/users/%D8%B7%D9%84%D8%A7%D8%A1%D8%A7%D9%8السيارات%20الرياض%20الغرابي/rate";
 
   // اكتشاف المتصفح الداخلي
   const [isInAppBrowser, setIsInAppBrowser] = useState(false);
@@ -130,15 +130,23 @@ export default function Home() {
           </svg>
         </a>
 
-        {/* زر حراج */}
+        {/* زر حراج العائم بالأيقونة الرسمية */}
         <a
           href={harajLink}
           target="_blank"
           rel="noopener noreferrer"
-          className="bg-orange-500 hover:bg-orange-400 text-white p-4 rounded-full shadow-lg hover:scale-110 transition duration-300 flex items-center justify-center"
+          className="bg-[#FF9900] hover:bg-[#e68a00] text-white p-4 rounded-full shadow-lg hover:scale-110 transition duration-300 flex items-center justify-center"
           title="تقييمات حراج"
         >
-          <span className="font-black text-sm">حراج</span>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="currentColor"
+          >
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z" />
+          </svg>
         </a>
 
         {/* تيك توك */}
@@ -203,14 +211,26 @@ export default function Home() {
             >
               أعمالنا
             </a>
+            
+            {/* زر حراج الرئيسي بالأيقونة والنص المحدث */}
             <a
               href={harajLink}
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-orange-500 hover:bg-orange-400 text-white px-12 py-4 rounded-full font-bold text-lg shadow-xl hover:-translate-y-1 transition-all w-full sm:w-auto text-center"
+              className="bg-[#FF9900] hover:bg-[#e68a00] text-white px-12 py-4 rounded-full font-bold text-lg shadow-xl hover:-translate-y-1 transition-all w-full sm:w-auto flex items-center justify-center gap-2 text-center"
             >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+              >
+                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z" />
+              </svg>
               تقييمات حراج
             </a>
+
             <a
               href={phoneLink}
               className="bg-gray-100 hover:bg-white text-gray-900 px-12 py-4 rounded-full font-bold text-lg shadow-xl hover:-translate-y-1 transition-all w-full sm:w-auto text-center"
