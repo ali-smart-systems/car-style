@@ -12,7 +12,9 @@ export default function Home() {
   const phoneLink = "tel:+966553368215";
 
   const googleMapsLink =
-    "https://maps.app.goo.gl/bzXpThGWnaCMqWmf8";
+
+   const harajLink =
+  "https://haraj.com.sa/users/%D8%B7%D9%84%D8%A7%D8%A1%D8%A7%D9%84%D8%B3%D9%8A%D8%A7%D8%B1%D8%AA%20%D8%A7%D9%84%D8%B1%D9%8A%D8%A7%D8%B6%20%D8%A7%D9%84%D8%BA%D8%B1%D8%A7%D8%A8%D9%8A/rate"; "https://maps.app.goo.gl/bzXpThGWnaCMqWmf8";
 
   // اكتشاف المتصفح الداخلي
   const [isInAppBrowser, setIsInAppBrowser] = useState(false);
@@ -125,7 +127,16 @@ export default function Home() {
             <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
           </svg>
         </a>
-
+{/* زر حراج */}
+<a
+  href={harajLink}
+  target="_blank"
+  rel="noopener noreferrer"
+  className="bg-orange-500 hover:bg-orange-400 text-white p-4 rounded-full shadow-lg hover:scale-110 transition duration-300 flex items-center justify-center"
+  title="تقييمات حراج"
+>
+  <span className="font-black text-sm">حراج</span>
+</a>
         {/* تيك توك */}
         <a
           href={tiktokLink}
@@ -153,15 +164,16 @@ export default function Home() {
       {/* Hero */}
       <section className="relative flex flex-col items-center justify-center text-center min-h-[95vh] px-4">
         <div className="absolute inset-0 z-0">
-          <img
-            src="/images/1.webp"
-            alt="كارستايل لرش وزينة السيارات في الرياض"
-            className="w-full h-full object-cover"
-          />
+  <img
+    src="/images/1.webp"
+    alt="كارستايل لرش وزينة السيارات في الرياض"
+    className="w-full h-full object-cover"
+  />
 
-          <div className="absolute inset-0 bg-black/40"></div>
+  <div className="absolute inset-0 bg-black/40"></div>
+</div>
 
-        <div className="relative z-10 max-w-5xl mt-10">
+<div className="relative z-10 max-w-5xl mt-10">
           <h1 className="text-7xl md:text-[10rem] font-black mb-4 text-transparent bg-clip-text bg-gradient-to-t from-blue-500 to-white drop-shadow-[0_0_15px_rgba(59,130,246,0.5)] italic tracking-tighter leading-none text-center uppercase">
             CAR STYLE
           </h1>
@@ -188,7 +200,14 @@ export default function Home() {
             >
               أعمالنا
             </a>
-
+<a
+  href={harajLink}
+  target="_blank"
+  rel="noopener noreferrer"
+  className="bg-orange-500 hover:bg-orange-400 text-white px-12 py-4 rounded-full font-bold text-lg shadow-xl hover:-translate-y-1 transition-all w-full sm:w-auto text-center"
+>
+  تقييمات حراج
+</a>
             <a
               href={phoneLink}
               className="bg-gray-100 hover:bg-white text-gray-900 px-12 py-4 rounded-full font-bold text-lg shadow-xl hover:-translate-y-1 transition-all w-full sm:w-auto text-center"
@@ -429,8 +448,7 @@ export default function Home() {
             className="w-full h-full object-cover opacity-30"
           />
 
-          <div className="absolute inset-0 bg-black/80 backdrop-blur-[2px]"></div>
-        </div>
+         <div className="absolute inset-0 bg-black/50"></div>
 
         <div className="relative z-10 max-w-5xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-16 mb-16 items-center">
