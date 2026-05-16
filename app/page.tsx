@@ -11,12 +11,11 @@ export default function Home() {
 
   const phoneLink = "tel:+966553368215";
 
-  // ✅ تم التصحيح وإعادة الرابط الأصلي بدقة كما كان
   const googleMapsLink =
     "https://maps.app.goo.gl/mWdPnqfxNkcpfa2t6";
 
   const harajLink =
-    "https://haraj.com.sa/users/%D8%B7%D9%84%D8%A7%D8%A1%D8%A7%D9%84%D8%B3%D9%8A%D8%A7%D8%B1%D8%AA%20%D8%A7%D9%84%D8%B1%D9%8A%D8%A7%D8%B6%20%D8%A7%D9%84%D8%BA%D8%B1%D8%A7%D8%A8%D9%8A/rate";
+    "https://haraj.com.sa/users/%D8%B7%D9%84%D8%A7%D8%A1%D8%A7%D9%84%D8%B3%D9%8A%D8%A7%D8%B1%D8%AA%20%D8%A7%D9%84%D8%B1%D9%8A%D8%A7%D8%B6%20%D8%A7%D9%84%D8%BA%D8%B1%D8%A7%D8%A8%D9%8ا/rate";
 
   // اكتشاف المتصفح الداخلي
   const [isInAppBrowser, setIsInAppBrowser] = useState(false);
@@ -159,7 +158,7 @@ export default function Home() {
           target="_blank"
           rel="noopener noreferrer"
           className="bg-[#0066CC] hover:bg-[#0052a3] text-white p-3 rounded-full shadow-lg hover:scale-110 transition duration-300 flex items-center justify-center border border-white/10"
-          title="تقييمات حراج"
+          title="حراج"
         >
           <HarajIcon />
         </a>
@@ -194,9 +193,10 @@ export default function Home() {
           <img
             src="/images/1.webp"
             alt="كارستايل لرش وزينة السيارات في الرياض"
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover brightness-110"
           />
-          <div className="absolute inset-0 bg-black/40"></div>
+          {/* 💡 تم تخفيف التعتيم هنا لرفع إضاءة الواجهة الرئيسية الخلفية */}
+          <div className="absolute inset-0 bg-black/25"></div>
         </div>
 
         <div className="relative z-10 max-w-5xl mt-10">
@@ -227,7 +227,6 @@ export default function Home() {
               أعمالنا
             </a>
             
-            {/* زر حراج الرئيسي المنسق بالكامل لمنع أي تداخل بصري */}
             <a
               href={harajLink}
               target="_blank"
@@ -235,7 +234,7 @@ export default function Home() {
               className="bg-[#0066CC] hover:bg-[#0052a3] text-white px-12 py-4 rounded-full font-bold text-lg shadow-xl hover:-translate-y-1 transition-all w-full sm:w-auto flex items-center justify-center gap-3 text-center border border-white/10"
             >
               <HarajIcon />
-              <span>تقييمات حراج</span>
+              <span>حراج</span>
             </a>
 
             <a
@@ -262,7 +261,7 @@ export default function Home() {
             { id: 5, title: "نانو سيراميك", desc: "حماية فائقة للمعان يدوم طويلاً" },
             { id: 6, title: "رش جنوط", desc: "ألوان جذابة ومقاومة للخدوش وعوامل الطريق" },
             { id: 7, title: "تنجيد مقاعد", desc: "تفصيل وتنجيد بأجود أنواع الجلود الفاخرة" },
-            { id: 8, title: "سمكرة وتعديل صدمات", desc: "إصلاح الصدمات والبودي بأحدث التقنيات الاحترافية" },
+            { id: 8, title: "سمكرة وتعديل صدمات", desc: "إصلاح الصدم الصدمات والبودي بأحدث التقنيات الاحترافية" },
             { id: 9, title: "إضاءات محيطية (ليد)", desc: "تركيب إضاءات زينة داخلية متناسقة وجذابة" },
             { id: 10, title: "تلميع داخلي عميق", desc: "تنظيف وتعقيم كامل لمقصورة السيارة والمقاعد" },
             { id: 11, title: "تلميع خارجي وإزالة خدوش", desc: "إزالة الدوائر والخدوش السطحية وإعادة اللمعان المذهل" },
@@ -280,11 +279,12 @@ export default function Home() {
               key={s.id}
               className="group bg-gray-800/40 backdrop-blur-sm rounded-[2rem] overflow-hidden border border-gray-700 hover:border-blue-500 transition-all duration-500 shadow-2xl"
             >
+              {/* 💡 أضفت brightness-110 و contrast-105 لرفع السطوع والوضوح لصور الخدمات بالكامل */}
               <div className="h-64 overflow-hidden">
                 <img
                   src={`/images/${s.id}.webp`}
                   alt={`${s.title} في الرياض - كارستايل`}
-                  className="w-full h-full object-cover opacity-100 group-hover:opacity-100 group-hover:scale-110 transition-all duration-700"
+                  className="w-full h-full object-cover opacity-100 brightness-110 contrast-105 group-hover:scale-110 transition-all duration-700"
                 />
               </div>
 
@@ -310,9 +310,10 @@ export default function Home() {
                 key={v}
                 className="relative h-[500px] bg-gray-800 rounded-3xl overflow-hidden border border-gray-700 group"
               >
+                {/* 💡 أضفت brightness-110 هنا لرفع إضاءة وسطوع الفيديوهات المعروضة */}
                 <video
                   src={`/videos/v${v}.webm`}
-                  className="w-full h-full object-cover opacity-100 group-hover:opacity-100 transition-opacity"
+                  className="w-full h-full object-cover opacity-100 brightness-110 contrast-105 transition-opacity"
                   autoPlay
                   muted
                   loop
@@ -376,9 +377,10 @@ export default function Home() {
           <img
             src="/images/5.webp"
             alt="موقع كارستايل في الرياض"
-            className="w-full h-full object-cover opacity-30"
+            className="w-full h-full object-cover opacity-40 brightness-110"
           />
-          <div className="absolute inset-0 bg-black/50"></div>
+          {/* 💡 خففت التعتيم هنا أيضاً لتصبح صورة الفوتر السفلية واضحة ومشرقة */}
+          <div className="absolute inset-0 bg-black/40"></div>
         </div>
 
         <div className="relative z-10 max-w-5xl mx-auto">
