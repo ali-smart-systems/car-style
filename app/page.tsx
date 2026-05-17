@@ -169,7 +169,7 @@ export default function Home() {
               rel="noopener noreferrer"
               className="bg-white/10 backdrop-blur-md border border-white/20 text-white px-12 py-4 rounded-full font-bold text-lg hover:bg-white/20 transition-all w-full sm:w-auto text-center"
             >
-              أعمالنا
+              أعمالنا في تيك توك
             </a>
 
             <a
@@ -183,7 +183,7 @@ export default function Home() {
       </section>
 
 
-{/* الخدمات */}
+      {/* الخدمات */}
       <section className="py-24 px-4 max-w-7xl mx-auto relative z-10">
         <h2 className="text-4xl font-bold mb-16 text-center text-white italic">
           أعمالنا وخدماتنا
@@ -327,7 +327,7 @@ export default function Home() {
 
 
 
-{/* الخريطة */}
+          {/* الخريطة */}
           <div className="flex flex-col items-center justify-center w-full mt-24">
             <h4 className="text-blue-500 font-black mb-6 uppercase tracking-widest text-2xl italic text-center">
               موقعنا الجغرافي
