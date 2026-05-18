@@ -20,6 +20,9 @@ export const viewport: Viewport = {
 
 // إعدادات الـ Metadata المحسنة للسيو المحلي
 export const metadata: Metadata = {
+  // إضافة metadataBase لضمان توليد الروابط الفرعية وصور OG بشكل صحيح
+  metadataBase: new URL('https://carstyle-sa.com'), 
+
   title: {
     default: "كارستايل | رش وسمكرة وزينة سيارات بالرياض - محمد الرباحي",
     template: "%s | كارستايل",
@@ -34,7 +37,9 @@ export const metadata: Metadata = {
     "رش سيارات الرياض",
     "سمكرة وبوية الرياض",
     "رش فرن",
-    "رش وكالة",
+"رش مطفي",
+  "رش مطاطي",
+  "رش وكالة",
     "رش جنوط",
     "تلميع سيارات",
     "نانو سيراميك",
@@ -65,7 +70,7 @@ export const metadata: Metadata = {
     description:
       "أفضل خدمات رش السيارات والتلميع والزينة والعازل الحراري في الرياض.",
 
-    url: "https://ضع-الدومين-هنا.com",
+    url: "https://carstyle-sa.com", // ✅ تم تحديث الدومين هنا
 
     siteName: "كارستايل",
 
@@ -100,7 +105,7 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-gray-900">
-        
+
         {children}
 
         {/* Local Business Schema لتحسين ظهور الموقع في قوقل */}
@@ -114,9 +119,9 @@ export default function RootLayout({
 
               name: "كارستايل",
 
-              image: "https://ضع-الدومين-هنا.com/images/1.webp",
+              image: "https://carstyle-sa.com/images/1.webp", // ✅ تم تحديث رابط الصورة هنا
 
-              url: "https://ضع-الدومين-هنا.com",
+              url: "https://carstyle-sa.com", // ✅ تم تحديث رابط الموقع هنا
 
               telephone: "+966553368215",
 
