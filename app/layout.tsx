@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import { GoogleAnalytics } from "@next/third-parties/google"; // 📊 استيراد المكون الرسمي لـ Google Analytics
 import "./globals.css";
 
 const geistSans = Geist({
@@ -21,7 +22,7 @@ export const viewport: Viewport = {
 // إعدادات الـ Metadata المحسنة للسيو المحلي
 export const metadata: Metadata = {
   // إضافة metadataBase لضمان توليد الروابط الفرعية وصور OG بشكل صحيح
-  metadataBase: new URL('https://carstyle-sa.com'), 
+  metadataBase: new URL('https://carstyle-sa.com'),
 
   title: {
     default: "كارستايل | رش وسمكرة وزينة سيارات بالرياض - محمد الرباحي",
@@ -37,9 +38,9 @@ export const metadata: Metadata = {
     "رش سيارات الرياض",
     "سمكرة وبوية الرياض",
     "رش فرن",
-"رش مطفي",
-  "رش مطاطي",
-  "رش وكالة",
+    "رش مطفي",
+    "رش مطاطي",
+    "رش وكالة",
     "رش جنوط",
     "تلميع سيارات",
     "نانو سيراميك",
@@ -107,6 +108,9 @@ export default function RootLayout({
       <body className="min-h-full flex flex-col bg-gray-900">
 
         {children}
+
+        {/* 📊 ربط قوقل أناليتكس بأحدث طريقة لـ Next.js - استبدل المعرف هنا بمعرّفك الحقيقي */}
+        <GoogleAnalytics gaId="G-YOUR_MEASUREMENT_ID" />
 
         {/* Local Business Schema لتحسين ظهور الموقع في قوقل */}
         <script
