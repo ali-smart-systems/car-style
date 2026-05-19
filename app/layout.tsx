@@ -110,7 +110,8 @@ export default function RootLayout({
         {children}
 
         {/* 📊 ربط قوقل أناليتكس بأحدث طريقة لـ Next.js - استبدل المعرف هنا بمعرّفك الحقيقي */}
-        <GoogleAnalytics gaId="G-YOUR_MEASUREMENT_ID" />
+        <GoogleAnalytics gaId="G-JJSX2X23M4" />
+
 
         {/* Local Business Schema لتحسين ظهور الموقع في قوقل */}
         <script
