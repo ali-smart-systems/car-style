@@ -10,7 +10,7 @@ interface Message {
 
 export default function CarStyleChat() {
     const [messages, setMessages] = useState<Message[]>([
-        { sender: 'bot', text: 'يا هلا بك يا غالي في مركز كار ستايل! أنا مساعدك الذكي، كيف أقدر أخدمك اليوم؟ (تظليل، تلميع، شاشات، نانو سيراميك...)' }
+        { sender: 'bot', text: 'يا هلا بك يا غالي في مركز كار ستايل! أنا مساعدك الذكي، كيف أقدر أخدمك اليوم؟ ( سمكرة، رش مطاطي، رش مطفي، نانو سيراميك...)' }
     ]);
     const [input, setInput] = useState('');
     const [loading, setLoading] = useState(false);
@@ -70,7 +70,7 @@ export default function CarStyleChat() {
                     <div className="bg-zinc-800 p-4 border-b border-zinc-700 flex items-center justify-between">
                         <div className="flex items-center gap-2">
                             <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
-                            <h3 className="text-white font-bold text-sm">مساعد كار ستايل الذكي</h3>
+                            <h3 className="text-white font-bold text-sm">مساعد محمد الرباحي الذكي</h3>
                         </div>
                     </div>
 
@@ -89,7 +89,7 @@ export default function CarStyleChat() {
                         ))}
                         {loading && (
                             <div className="bg-zinc-800 text-zinc-400 text-xs p-3 rounded-2xl self-end rounded-tl-none animate-pulse">
-                                جاري الكتابة...
+                                محمد الرباحي يكتب...
                             </div>
                         )}
                         <div ref={messagesEndRef} />
@@ -103,7 +103,7 @@ export default function CarStyleChat() {
                             value={input}
                             onChange={(e) => setInput(e.target.value)}
                             onKeyDown={(e) => e.key === 'Enter' && handleSend()}
-                            placeholder="اسأل عن الأسعار، التظليل، أو التلميع..."
+                            placeholder="اسأل عن الأسعار، الرش المطفي، أو التلميع..."
                             className="flex-1 bg-zinc-950 text-white text-sm rounded-xl px-3 py-2 border border-zinc-700 focus:outline-none focus:border-yellow-500"
                         />
                         <button
