@@ -68,14 +68,9 @@ export const metadata: Metadata = {
 
   openGraph: {
     title: "كارستايل | رش وسمكرة وزينة سيارات بالرياض",
-
-    description:
-      "أفضل خدمات رش السيارات والتلميع والزينة والعازل الحراري في الرياض.",
-
-    url: "https://carstyle-sa.com", // ✅ تم تحديث الدومين هنا
-
+    description: "أفضل خدمات رش السيارات والتلميع والزينة والعازل الحراري في الرياض.",
+    url: "https://carstyle-sa.com",
     siteName: "كارستايل",
-
     images: [
       {
         url: "/images/1.webp",
@@ -84,9 +79,7 @@ export const metadata: Metadata = {
         alt: "كارستايل الرياض",
       },
     ],
-
     locale: "ar_SA",
-
     type: "website",
   },
 
@@ -113,7 +106,7 @@ export default function RootLayout({
         {/* 💬 إضافة الشات الذكي ليظهر في زاوية كافة صفحات الموقع */}
         <CarStyleChat />
 
-        {/* 📊 ربط قوقل أناليتكس بأحدث طريقة لـ Next.js - استبدل المعرف هنا بمعرّفك الحقيقي */}
+        {/* 📊 ربط قوقل أناليتكس بأحدث طريقة لـ Next.js */}
         <GoogleAnalytics gaId="G-JJSX2X23M4" />
 
         {/* Local Business Schema لتحسين ظهور الموقع في قوقل */}
@@ -122,31 +115,22 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               "@context": "https://schema.org",
-
               "@type": "AutoBodyShop",
-
               name: "كارستايل",
-
-              image: "https://carstyle-sa.com/images/1.webp", // ✅ تم تحديث رابط الصورة هنا
-
-              url: "https://carstyle-sa.com", // ✅ تم تحديث رابط الموقع هنا
-
+              image: "https://carstyle-sa.com/images/1.webp",
+              url: "https://carstyle-sa.com",
               telephone: "+966553368215",
-
               address: {
                 "@type": "PostalAddress",
                 addressLocality: "الرياض",
                 addressCountry: "SA",
               },
-
               areaServed: "الرياض",
-
               sameAs: [
                 "https://maps.app.goo.gl/mWdPnqfxNkcpfa2t6",
                 "https://www.tiktok.com/@user1853168014566",
                 "https://g.page/r/Cd_j_pTnHdnuEBI/review"
               ],
-
               aggregateRating: {
                 "@type": "AggregateRating",
                 ratingValue: "4.9",
