@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { GoogleAnalytics } from "@next/third-parties/google"; // 📊 استيراد المكون الرسمي لـ Google Analytics
+import CarStyleChat from "@/components/CarStyleChat"; // 💬 استيراد مكون الشات الذكي لكار ستايل
 import "./globals.css";
 
 const geistSans = Geist({
@@ -109,8 +110,11 @@ export default function RootLayout({
 
         {children}
 
+        {/* 💬 إضافة الشات الذكي ليظهر في زاوية كافة صفحات الموقع */}
+        <CarStyleChat />
+
         {/* 📊 ربط قوقل أناليتكس بأحدث طريقة لـ Next.js - استبدل المعرف هنا بمعرّفك الحقيقي */}
-        <GoogleAnalytics gaId="G-YOUR_MEASUREMENT_ID" />
+        <GoogleAnalytics gaId="G-JJSX2X23M4" />
 
         {/* Local Business Schema لتحسين ظهور الموقع في قوقل */}
         <script
