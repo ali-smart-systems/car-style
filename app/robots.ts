@@ -6,6 +6,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: '*',
       allow: '/',
     },
-    sitemap: 'https://carstyle-sa.com/sitemap.xml',
+    sitemap: 'https://www.carstyle-sa.com/sitemap.xml',
   }
 }
